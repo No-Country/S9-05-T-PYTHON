@@ -2,21 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+	--primary-color-light: #b097bf;
+	--primary-color: #4f6e98;
+	--primary-color-dark: #344b6a;
+	--secondary-color-light: #fbd46a;
+	--secondary-color: #f3b51e;
+	--tertiary-color: #683832;
+	--white: #fbfbfb;
+	--black: #191919;
+	--bg-gradient: linear-gradient(
+		90deg,
+		rgba(251, 212, 106, 1) 0%,
+		rgba(176, 151, 191, 1) 40%,
+		rgba(25, 25, 25, 1) 90%
+	);
+	--text-color: #2e2e2e;
+	--title-font: 'Dancing Script', cursive;
+	--body-font: 'Poppins', sans-serif;
 }
 
-:root {
-  --color1: #190019;
-  --color2: #2B124C;
-  --color3: #522B5B;
-  --color4: #854F6C;
-  --color5: #DFB6B2;
-  --color6: #FBE4D8;
-  --blanco: white;
-  --negro: black;
-  --poppins: 'Poppins', sans-serif;
-  --dancing: 'Dancing Script', cursive;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	font-family: var(--body-font);
+	color: var(--text-color);
+	background-color: var(--white);
+	display: grid;
+	place-items: center;
 }
