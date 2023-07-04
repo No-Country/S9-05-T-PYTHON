@@ -11,12 +11,10 @@
 	--tertiary-color: #683832;
 	--white: #fbfbfb;
 	--black: #191919;
-	--bg-gradient: linear-gradient(
-		90deg,
-		rgba(251, 212, 106, 1) 0%,
-		rgba(176, 151, 191, 1) 40%,
-		rgba(25, 25, 25, 1) 90%
-	);
+	--bg-gradient: linear-gradient(90deg,
+			rgba(251, 212, 106, 1) 0%,
+			rgba(176, 151, 191, 1) 40%,
+			rgba(25, 25, 25, 1) 90%);
 	--text-color: #2e2e2e;
 	--title-font: 'Dancing Script', cursive;
 	--body-font: 'Poppins', sans-serif;
