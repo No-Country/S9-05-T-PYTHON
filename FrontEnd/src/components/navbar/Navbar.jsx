@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
@@ -7,9 +8,9 @@ const Navbar = () => {
             </div>
             <div className="w-[60%] flex justify-center">
                 <ul className="flex gap-2">
-                    <li>nostros</li>
-                    <li>contacto</li>
-                    <li>login</li>
+                    <li><Link to="/">nosotros</Link></li>
+                    <li><Link to="/">contacto</Link></li>
+                    <li><Link to="/auth/login">login</Link></li>
                 </ul>
             </div>
         </nav>
