@@ -32,5 +32,4 @@ body {
 	color: var(--text-color);
 	background-color: var(--white);
 	display: grid;
-	place-items: center;
 }
