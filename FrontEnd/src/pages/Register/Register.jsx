@@ -10,7 +10,7 @@ const Register = () => {
 				<RegisterForm />
 				<p>
 					Ya tienes una cuenta?{' '}
-					<Link to='/login' className='text-[--primary-color] font-semibold'>
+					<Link to='auth/login' className='text-[--primary-color] font-semibold'>
 						Login
 					</Link>
 				</p>

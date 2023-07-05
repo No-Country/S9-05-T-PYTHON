@@ -1,5 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 import * as yup from 'yup';
 
 const schema = yup
@@ -22,6 +24,8 @@ const schema = yup
 	.required();
 
 const RegisterForm = () => {
+	const MySwal = withReactContent(Swal);
+
 	const {
 		register,
 		handleSubmit,
@@ -35,6 +39,12 @@ const RegisterForm = () => {
 	const formSubmit = (data) => {
 		reset();
 		console.log(data);
+
+		MySwal.fire({
+			title: 'Registro exitoso!!',
+			icon: 'success',
+			scrollbarPadding: false,
+		});
 	};
 
 	return (
