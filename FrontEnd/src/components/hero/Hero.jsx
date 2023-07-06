@@ -1,7 +1,10 @@
+import SliderHero from "./SliderHero"
+
+
 const Hero = () => {
     return (
         <section className="">
-            <img className="w-full object-cover" src="/hero.webp" alt="hero" />
+            < SliderHero />
         </section>
     )
 }

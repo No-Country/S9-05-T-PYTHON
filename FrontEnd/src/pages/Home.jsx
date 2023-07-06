@@ -10,12 +10,12 @@ export const Home = () => {
   return (
     <>
       <div className="min-h-screen ">
-        <div className="sticky top-0 z-10 bg-[#312c2c] pt-4 w-[100v]">
+        <div className="sticky top-0 z-10 bg-[#312c2c] pt-4 w-[100%]">
           <Navbar />
         </div>
-        <div className="h-[10%]">
+        <section className="h-[20%] w-[100%]">
           <Hero />
-        </div>
+        </section>
       </div>
       <h1 className="text-6xl">{data?.name}</h1>
     </>
