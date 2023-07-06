@@ -11,7 +11,7 @@ export const Home = () => {
   return (
     <>
       <div className="min-h-screen">
-        <div className="sticky top-0 z-10 bg-[#312c2c] pt-4">
+        <div className="sticky top-0 z-10  pt-4 w-[100%]">
           <Navbar />
         </div>
         <div className="h-auto">
@@ -23,6 +23,6 @@ export const Home = () => {
       </div>
       <h1 className="text-6xl">{data?.name}</h1>
     </>
-
   )
 }
+
