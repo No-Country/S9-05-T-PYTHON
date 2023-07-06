@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Login = () => {
   const [username, setUsername] = useState("");
@@ -38,10 +39,19 @@ export const Login = () => {
         />
         <button
           type="submit"
-          className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
+          className="bg-[--primary-color-light] text-white py-2 px-4 rounded-md hover:bg-[--primary-color-dark]"
         >
           Iniciar sesión
         </button>
+        <p className="mt-3">No tienes una cuenta?</p>
+        <Link to="/auth/register">
+          <button
+            
+            className="bg-[--primary-color-light] text-white py-2 px-4 rounded-md hover:bg-[--primary-color-dark]"
+          >
+            registrarse
+          </button>
+        </Link>
       </form>
     </div>
   );
