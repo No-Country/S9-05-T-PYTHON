@@ -27,9 +27,27 @@
 }
 
 body {
-	min-height: 100vh;
 	font-family: var(--body-font);
 	color: var(--text-color);
 	background-color: var(--white);
-	display: grid;
+	/* display: grid;
+	place-items: center; */
+}
+
+.swiper {
+	width: 100%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.swiper-slide {
+	background-position: center;
+	background-size: cover;
+	width: 400px;
+	height: 400px;
+}
+
+.swiper-slide img {
+	display: block;
+	width: 100%;
 }

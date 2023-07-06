@@ -18,7 +18,7 @@ export const Home = () => {
           <Hero />
         </div>
         <div className="flex w-full justify-evenly items-center p-4">
-          {data?<Cards name ={data.species.name} photo={data.sprites.front_default} url={data.species.url}/>:<p>LOADING</p>}
+          {data ? <Cards name={data.species.name} photo={data.sprites.front_default} url={data.species.url} /> : <p>LOADING</p>}
         </div>
       </div>
       <h1 className="text-6xl">{data?.name}</h1>
