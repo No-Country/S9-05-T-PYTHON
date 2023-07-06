@@ -31,7 +31,7 @@ const listPet = [
         id: 4,
         title: "Nala",
         image: "https://cdn.pixabay.com/photo/2014/07/06/15/03/hangover-385572_1280.jpg",
-        description: "Nala es una gata de ojos verdes. Es elegante, ágil y le encanta recibir caricias. Nala tiene un carácter tranquilo pero también es muy juguetona, especialmente cuando se le presenta un juguete con plumas."
+        description: "Nala es una gata de ojos verdes. Es elegante, ágil y le encanta recibir caricias. Nala tiene un carácter tranquilo pero también es muy juguetona."
     },
     {
         id: 5,
@@ -84,7 +84,7 @@ const SliderHero = () => {
         setIsHovered(false);
     };
     return (
-        <div className=" bg-[#312c2c]" onMouseLeave={handleMouseLeave}>
+        <div className="" onMouseLeave={handleMouseLeave}>
             <Swiper
                 effect={'coverflow'}
                 grabCursor={true}
@@ -116,8 +116,8 @@ const SliderHero = () => {
                                 />
                             </figure>
                             <div className="p-3">
-                                <h3 className="text-white text-center">{pet.title}</h3>
-                                <p className="text-white text-sm">{pet.description}</p>
+                                <h3 className="text-black text-center">{pet.title}</h3>
+                                <p className="text-black text-sm">{pet.description}</p>
                             </div>
                         </SwiperSlide>
                     </div>
