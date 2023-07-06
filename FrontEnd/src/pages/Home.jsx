@@ -10,7 +10,7 @@ export const Home = () => {
   return (
     <>
       <div className="min-h-screen ">
-        <div className="sticky top-0 z-10 bg-[#312c2c] pt-4 w-[100%]">
+        <div className="sticky top-0 z-10  pt-4 w-[100%]">
           <Navbar />
         </div>
         <section className="h-[20%] w-[100%]">
