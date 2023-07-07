@@ -1,6 +1,6 @@
 from django.db import models
 
-from applications.person.models import PersonModel
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -73,7 +73,7 @@ class PetModel(models.Model):
         null=True,
     )
     owner = models.ForeignKey(
-        PersonModel,
+        User,
         on_delete= models.CASCADE
     )
     img_pet = models.ImageField(
