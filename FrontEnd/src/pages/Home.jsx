@@ -1,6 +1,6 @@
 import Navbar from "../components/navbar/Navbar";
 import Hero from "../components/hero/Hero";
-import Cards from "../components/cards/Cards";
+import Services from "../components/services/Services";
 import { useGetPokemonQuery } from "../store/api/apiSlice";
 
 export const Home = () => {
@@ -18,7 +18,7 @@ export const Home = () => {
           <Hero />
         </div>
         <div className="flex w-full justify-evenly items-center p-4">
-          {data ? <Cards name={data.species.name} photo={data.sprites.front_default} url={data.species.url} /> : <p>LOADING</p>}
+          <Services/>
         </div>
       </div>
       <h1 className="text-6xl">{data?.name}</h1>
