@@ -10,7 +10,7 @@ export const Home = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-gradient-to-b from-violet-500 to-pink-200 ">
+      <div className="min-h-screen bg-gradient-to-b from-[--primary-color-light] to-[--white] ">
         <div className="sticky top-0 z-10  pt-4 w-[100%]">
           <Navbar />
         </div>

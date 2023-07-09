@@ -5,11 +5,11 @@ import {GiSittingDog, GiHealthNormal} from "react-icons/gi";
 import {LuHotel} from "react-icons/lu"
 
 const Services=()=>{
-    const divContainerServices="p-4 flex flex-col justify-evenly items-center text-center rounded-lg m-4 w-[75%] lg:w-[85%] gap-2 border-2"
-    const iconServices="text-3xl text-violet-500"
+    const divContainerServices="p-4 flex flex-col justify-evenly items-center text-center rounded-lg m-4 w-[75%] lg:w-[85%] gap-2 border-2 border-[--primary-color-dark]"
+    const iconServices="text-3xl text-[--primary-color-dark]"
     const titleServices="text-2xl font-bold"
     const descriptionServices="text-xl font-medium"
-    const buttonServices="rounded-xl p-2 bg-violet-300 hover:bg-violet-200 font-medium"
+    const buttonServices="rounded-xl p-2 bg-[--primary-color] text-[--white] hover:bg-[--primary-color-dark] font-medium"
     return(
         <div className="flex flex-col items-center w-[100%]">
             <h3>Servicios</h3>
