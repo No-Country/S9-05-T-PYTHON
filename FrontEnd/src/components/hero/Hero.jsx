@@ -11,7 +11,7 @@ const Hero = () => {
                 <div className="w-[50%] flex flex-col justify-center items-center gap-20">
                     <h2 className="text-4xl">¡Matchea ahora!</h2>
                     <p>El sitio web perfecto para encontrar el alma gemela de tu mascota</p>
-                    <button className="border p-2 rounded-xl hover:bg-violet-400">Buscar!</button>
+                    <button className="border-2 border-[--primary-color-dark] p-2 rounded-xl w-[25%] hover:bg-[--primary-color]">Buscar!</button>
                 </div>
             </section>
             <section className="">
