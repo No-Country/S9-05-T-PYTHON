@@ -12,8 +12,8 @@ const Services=()=>{
     const buttonServices="rounded-xl p-2 bg-[--primary-color] text-[--white] hover:bg-[--primary-color-dark] font-medium"
     return(
         <div className="flex flex-col items-center w-[100%]">
-            <h3>Servicios</h3>
-            <p>Contamos con una gran cantidad y variedad de servicios a tu disposición.</p>
+            <h3 className="text-3xl p-4">Servicios</h3>
+            <p className="text-lg p-4">Contamos con una gran cantidad y variedad de servicios a tu disposición.</p>
             <div className="flex flex-col items-center w-[100%] lg:flex-row">
                 <div className={divContainerServices}>
                     <BsScissors className={iconServices}/>
