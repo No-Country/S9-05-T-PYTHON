@@ -1,15 +1,14 @@
 import Navbar from "../components/navbar/Navbar";
 import Hero from "../components/hero/Hero";
 import Services from "../components/services/Services";
-import { useGetPokemonQuery } from "../store/api/apiSlice";
+//import { useGetPokemonQuery } from "../store/api/apiSlice";
 import Footer from "../components/footer/Footer";
 import FindPet from "../components/findpet/FindPet";
 import CustomerSlider from "../components/customers/CustomerSlider";
 
 export const Home = () => {
-  const { data } = useGetPokemonQuery('squirtle')
-
-  console.log(data);
+  //const { data } = useGetPokemonQuery('squirtle')
+  //console.log(data);
   // const names = data.species.name
   // const urls = data.species.species
   // const photos = data.sprites.front_default
