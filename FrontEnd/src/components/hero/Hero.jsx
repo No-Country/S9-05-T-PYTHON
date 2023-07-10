@@ -1,4 +1,4 @@
-import SliderHero from "./SliderHero"
+import SliderHero from "../sliderhero/SliderHero"
 
 
 const Hero = () => {
