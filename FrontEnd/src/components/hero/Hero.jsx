@@ -1,4 +1,4 @@
-import SliderHero from "./SliderHero"
+import SliderHero from "../sliderhero/SliderHero"
 import dogHero from "../../assets/img/dog2.webp"
 const Hero = () => {
     return (

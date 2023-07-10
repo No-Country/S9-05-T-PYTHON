@@ -5,15 +5,15 @@ import {GiSittingDog, GiHealthNormal} from "react-icons/gi";
 import {LuHotel} from "react-icons/lu"
 
 const Services=()=>{
-    const divContainerServices="p-4 flex flex-col justify-evenly items-center text-center rounded-lg m-4 w-[75%] lg:w-[85%] gap-2 border-2 border-[--primary-color-dark]"
+    const divContainerServices="p-4 flex flex-col justify-evenly items-center text-center rounded-lg m-4 min-h-[100%] w-[75%] lg:w-[85%] gap-2 border-2 border-[--primary-color-dark]"
     const iconServices="text-3xl text-[--primary-color-dark]"
     const titleServices="text-2xl font-bold"
     const descriptionServices="text-xl font-medium"
     const buttonServices="rounded-xl p-2 bg-[--primary-color] text-[--white] hover:bg-[--primary-color-dark] font-medium"
     return(
         <div className="flex flex-col items-center w-[100%]">
-            <h3 className="text-3xl p-4">Servicios</h3>
-            <p className="text-lg p-4">Contamos con una gran cantidad y variedad de servicios a tu disposición.</p>
+            <h3 className="text-4xl p-4">Servicios</h3>
+            <p className="text-2xl p-4">Contamos con una gran cantidad y variedad de servicios a tu disposición.</p>
             <div className="flex flex-col items-center w-[100%] lg:flex-row">
                 <div className={divContainerServices}>
                     <BsScissors className={iconServices}/>
@@ -50,7 +50,7 @@ const Services=()=>{
                 <div className={divContainerServices}>
                     <LuHotel className={iconServices}/>
                     <p className={titleServices}>Hotel de mascotas</p>
-                    <p className={descriptionServices}>No te preocupes si tienes que viajar, regalale una estadia en un hotel exclusivo.</p>
+                    <p className={descriptionServices}>Si tienes que viajar, regalale una estadia en un hotel exclusivo.</p>
                     <button className={buttonServices}>Ver más</button>
                 </div>
             </div>
