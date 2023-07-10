@@ -1,23 +1,21 @@
 import SliderHero from "../sliderhero/SliderHero"
-
-
+import dogHero from "../../assets/img/dog2.webp"
 const Hero = () => {
     return (
         <>
-            <section className="">
-                < SliderHero />
-            </section>
-            <section className="bg-gradient-to-tl from-red-200 to-violet-300 flex justify-evenly items-center h-screen">
-                <div className="w-[50%] flex flex-col justify-center items-center">
-                    <p>Matchea ahora!</p>
+            <section className="flex flex-col sm:flex-row justify-around sm:justify-center items-center min-h-[100vh]">
+                <div className="w-[50%] sm:w-[25%] flex justify-center items-center">
+                    <img src={dogHero} alt="dogHero" />
+                </div>
+                <div className="w-[75%] sm:w-[50%] flex flex-col justify-center items-center text-center gap-5 lg:gap-16 xl:gap-20">
+                    <h2 className="text-4xl">¡Matchea ahora!</h2>
                     <p>El sitio web perfecto para encontrar el alma gemela de tu mascota</p>
-                    <button className="border p-2 rounded-xl hover:bg-violet-400">Buscar!</button>
-                </div>
-                <div className="w-[50%] ">
-                    <img src="/hero.webp" alt="dogHero" />
+                    <button className="border-2 border-[--primary-color-dark] p-2 rounded-xl w-[50%] sm:w-[75%] lg:w-[50%] hover:bg-[--primary-color]">Buscar!</button>
                 </div>
             </section>
-
+            <section>
+                <SliderHero />
+            </section>
         </>
     )
 }

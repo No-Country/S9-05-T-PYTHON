@@ -1,6 +1,6 @@
 import Navbar from "../components/navbar/Navbar";
 import Hero from "../components/hero/Hero";
-import Cards from "../components/cards/Cards";
+import Services from "../components/services/Services";
 import { useGetPokemonQuery } from "../store/api/apiSlice";
 import Footer from "../components/footer/Footer";
 import FindPet from "../components/findpet/FindPet";
@@ -15,15 +15,15 @@ export const Home = () => {
   // const photos = data.sprites.front_default
   return (
     <>
-      <div className="min-h-screen">
-        <div className="sticky top-0 z-10  pt-4">
+      <div className="min-h-screen bg-gradient-to-b from-[--primary-color-light] to-[--white]">
+        <div className="sticky top-0 z-10  pt-4 w-[100%]">
           <Navbar />
         </div>
-        <div className="h-auto">
-          < Hero />
+        <div className="min-h-[100vh]">
+          <Hero />
         </div>
-        <div className="flex w-full justify-evenly items-center p-4">
-          <Cards data={data} />
+        <div className="flex w-full min-h-[100vh] justify-evenly items-center p-4">
+          <Services/>
         </div>
         <section>
           <FindPet />
