@@ -4,8 +4,8 @@ import dogHero from "../../assets/img/dog2.webp"
 const Hero = () => {
     return (
         <>
-            <section className="flex flex-col sm:flex-row justify-evenly items-center min-h-[100vh]">
-                <div className="w-[50%] sm:w-[25%]">
+            <section className="flex flex-col sm:flex-row justify-around sm:justify-center items-center min-h-[100vh]">
+                <div className="w-[50%] sm:w-[25%] flex justify-center items-center">
                     <img src={dogHero} alt="dogHero" />
                 </div>
                 <div className="w-[75%] sm:w-[50%] flex flex-col justify-center items-center text-center gap-5 lg:gap-16 xl:gap-20">
