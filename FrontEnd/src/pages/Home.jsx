@@ -14,10 +14,10 @@ export const Home = () => {
         <div className="sticky top-0 z-10  pt-4 w-[100%]">
           <Navbar />
         </div>
-        <div className="h-auto">
+        <div className="min-h-[100vh]">
           <Hero />
         </div>
-        <div className="flex w-full h-[100vh] justify-evenly items-center p-4">
+        <div className="flex w-full min-h-[100vh] justify-evenly items-center p-4">
           <Services/>
         </div>
       </div>
