@@ -15,7 +15,7 @@ export const Home = () => {
   return (
     <>
       <div className="min-h-screen bg-gradient-to-b from-[--primary-color-light] to-[--white]">
-        <div className="sticky top-0 z-10  pt-4 w-[100%]">
+        <div className="sticky backdrop-blur-xl top-0 z-10  pt-4 w-[100%]">
           <Navbar />
         </div>
         <div className="min-h-[100vh]">
