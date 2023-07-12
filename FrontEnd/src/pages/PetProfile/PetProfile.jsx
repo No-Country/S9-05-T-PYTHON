@@ -1,10 +1,9 @@
 import petImg from '../../assets/img/pet.jpg';
 import profileAvatar from '../../assets/img/profile.jpg';
-import logo from '../../assets/LogoPetConnect.svg';
 
 const PetProfile = () => {
 	return (
-		<section className='py-20 flex gap-5 w-full max-w-[1400px] min-h-screen items-start justify-between mx-auto'>
+		<section className='pt-28 pb-20 flex gap-5 w-full max-w-[1300px] min-h-screen items-start justify-between mx-auto'>
 			{/* Aside with pet's owner profile */}
 			<div className='flex flex-col w-64 bg-slate-200 rounded overflow-hidden shadow-md'>
 				<img
@@ -25,7 +24,6 @@ const PetProfile = () => {
 					<button className='bg-[--primary-color] px-5 py-2 rounded font-semibold hover:bg-[--primary-color-dark] transition-all text-[--secondary-color-light] shadow-md  outline-none mt-2 self-center w-full'>
 						CTA
 					</button>
-					<img src={logo} alt='' />
 				</div>
 			</div>
 			{/* Main content with pet's info and actions */}
@@ -79,7 +77,7 @@ const PetProfile = () => {
 					<h3 className='text-4xl font-semibold text-center text-[--primary-color-dark]'>
 						Galería
 					</h3>
-					<div className='flex flex-wrap gap-5 justify-evenly'>
+					<div className='flex flex-wrap gap-3 justify-evenly'>
 						<img
 							src={petImg}
 							alt='gallery'
