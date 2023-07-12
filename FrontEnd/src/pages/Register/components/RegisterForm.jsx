@@ -102,7 +102,7 @@ const RegisterForm = () => {
 			</div>
 			<button
 				type='submit'
-				className='bg-[--primary-color] px-5 py-3 rounded font-semibold hover:bg-[--primary-color-dark] transition-all text-[--secondary-color-light] shadow-md min-w-[250px] mt-4 outline-none'>
+				className='bg-primary px-5 py-3 rounded hover:bg-primary-dark transition-all text-secondary-light shadow-md min-w-[250px] mt-4 outline-none'>
 				Enviar
 			</button>
 		</form>

@@ -1,24 +1,28 @@
-import { Navigate, Route, Routes } from 'react-router-dom';
+import {
+	Navigate,
+	Route,
+	createBrowserRouter,
+	createRoutesFromElements,
+} from 'react-router-dom';
 import { Login } from '../auth';
+import MainLayout from '../layout/MainLayout';
 import { Home } from '../pages';
-import Register from '../pages/Register/Register';
 import PetProfile from '../pages/PetProfile/PetProfile';
+import Register from '../pages/Register/Register';
 
-export const AppRouter = () => {
-	return (
-		<>
-			<Routes>
-				<>
-					<Route path='/auth/*' element={<Login />} />
-					<Route path='/*' element={<Navigate to='auth/login' />} />
-					<Route path='/auth/register' element={<Register />} />
-				</>
-				<>
-					<Route path='/' element={<Home />} />
-					<Route path='/*' element={<Navigate to='/' />} />
-					<Route path='/petprofile' element={<PetProfile />} />
-				</>
-			</Routes>
-		</>
-	);
-};
+export const AppRouter = createBrowserRouter(
+	createRoutesFromElements(
+		<Route path='/' element={<MainLayout />}>
+			<>
+				<Route path='/auth/*' element={<Login />} />
+				<Route path='/*' element={<Navigate to='auth/login' />} />
+				<Route path='/auth/register' element={<Register />} />
+			</>
+			<>
+				<Route path='/' element={<Home />} />
+				<Route path='/*' element={<Navigate to='/' />} />
+				<Route path='/petprofile' element={<PetProfile />} />
+			</>
+		</Route>
+	)
+);
