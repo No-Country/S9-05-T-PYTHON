@@ -7,6 +7,7 @@ import {
 import { Login } from '../auth';
 import MainLayout from '../layout/MainLayout';
 import { Home } from '../pages';
+import Matchs from '../pages/matchs/Matchs';
 import PetProfile from '../pages/PetProfile/PetProfile';
 import Register from '../pages/Register/Register';
 
@@ -21,6 +22,7 @@ export const AppRouter = createBrowserRouter(
 			<>
 				<Route path='/' element={<Home />} />
 				<Route path='/*' element={<Navigate to='/' />} />
+				<Route path='/matchs' element={<Matchs />} />
 				<Route path='/petprofile' element={<PetProfile />} />
 			</>
 		</Route>
