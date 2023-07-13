@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom"
 import dogHero from '../../assets/img/hero.jpg';
 const Hero = () => {
 	return (
@@ -13,9 +14,9 @@ const Hero = () => {
 					<p className='text-2xl max-w-[30ch]'>
 						El sitio web perfecto para encontrar el alma gemela de tu mascota
 					</p>
-					<button className='bg-secondary px-5 py-3 rounded-xl hover:bg-secondary-light w-[50%] sm:w-[75%] lg:w-[50%] shadow-md transition-all text-xl text-body font-title font-bold'>
+					<Link to="/matchs" className='bg-secondary px-5 py-3 rounded-xl hover:bg-secondary-light w-[50%] sm:w-[75%] lg:w-[50%] shadow-md transition-all text-xl text-body font-title font-bold'>
 						Buscar!
-					</button>
+					</Link>
 				</div>
 			</section>
 		</>
