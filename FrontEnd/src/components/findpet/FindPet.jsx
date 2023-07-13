@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const FindPet = () => {
 	return (
 		<section className=' flex justify-evenly items-center relative'>
@@ -15,9 +16,9 @@ const FindPet = () => {
 					<p className='text-white text-lg'>
 						El sitio web perfecto para encontrar el alma gemela de tu mascota
 					</p>
-					<button className='text-lg border px-3 py-2 rounded-xl bg-gradient-to-tl from-real to-noreal text-white hover:bg-real'>
+					<Link to="/matchs" className='text-lg border px-3 py-2 rounded-xl bg-gradient-to-tl from-real to-noreal text-white hover:bg-real'>
 						Buscar !
-					</button>
+					</Link>
 				</div>
 			</div>
 		</section>
