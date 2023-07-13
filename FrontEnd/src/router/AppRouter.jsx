@@ -10,21 +10,23 @@ import { Home } from '../pages';
 import Matchs from '../pages/matchs/Matchs';
 import PetProfile from '../pages/PetProfile/PetProfile';
 import Register from '../pages/Register/Register';
+import { Error404 } from "../layout/Error404";
 
 export const AppRouter = createBrowserRouter(
-	createRoutesFromElements(
-		<Route path='/' element={<MainLayout />}>
-			<>
-				<Route path='/auth/*' element={<Login />} />
-				<Route path='/*' element={<Navigate to='auth/login' />} />
-				<Route path='/auth/register' element={<Register />} />
-			</>
-			<>
-				<Route path='/' element={<Home />} />
-				<Route path='/*' element={<Navigate to='/' />} />
-				<Route path='/matchs' element={<Matchs />} />
-				<Route path='/petprofile' element={<PetProfile />} />
-			</>
-		</Route>
-	)
+  createRoutesFromElements(
+    <Route path="/" element={<MainLayout />}>
+      <>
+        <Route path="/auth/*" element={<Login />} />
+        <Route path="/*" element={<Navigate to="auth/login" />} />
+        <Route path="/auth/register" element={<Register />} />
+      </>
+      <>
+        <Route path="/" element={<Home />} />
+        <Route path="/*" element={<Navigate to="/" />} />
+        <Route path='/matchs' element={<Matchs />} />
+        <Route path="/petprofile" element={<PetProfile />} />
+      </>
+      <Route path="/404" element={<Error404 />} />{" "}
+    </Route>
+  )
 );
