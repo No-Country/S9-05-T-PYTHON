@@ -56,17 +56,17 @@ const RegisterForm = () => {
 					{...register('name')}
 					placeholder='Full Name'
 					autoFocus
-					className='p-3 outline-none w-full border-b border-[--primary-color-light] bg-transparent'
+					className='p-3 outline-none w-full border-b border-primary-light bg-transparent'
 				/>
-				<p className='text-red-500 text-center text-sm'>{errors.name?.message}</p>
+				<p className='text-tertiary text-center text-sm'>{errors.name?.message}</p>
 			</div>
 			<div className='w-full'>
 				<input
 					{...register('userName')}
 					placeholder='User Name'
-					className='p-3 outline-none w-full border-b border-[--primary-color-light] bg-transparent'
+					className='p-3 outline-none w-full border-b border-primary-light bg-transparent'
 				/>
-				<p className='text-red-500 text-center text-sm'>
+				<p className='text-tertiary text-center text-sm'>
 					{errors.userName?.message}
 				</p>
 			</div>
@@ -74,18 +74,18 @@ const RegisterForm = () => {
 				<input
 					{...register('email')}
 					placeholder='Email'
-					className='p-3 outline-none w-full border-b border-[--primary-color-light] bg-transparent'
+					className='p-3 outline-none w-full border-b border-primary-light bg-transparent'
 				/>
-				<p className='text-red-500 text-center text-sm'>{errors.email?.message}</p>
+				<p className='text-tertiary text-center text-sm'>{errors.email?.message}</p>
 			</div>
 			<div className='w-full'>
 				<input
 					{...register('password')}
 					type='password'
 					placeholder='Password'
-					className='p-3 outline-none w-full border-b border-[--primary-color-light] bg-transparent'
+					className='p-3 outline-none w-full border-b border-primary-light bg-transparent'
 				/>
-				<p className='text-red-500 text-center text-sm'>
+				<p className='text-tertiary text-center text-sm'>
 					{errors.password?.message}
 				</p>
 			</div>
@@ -94,9 +94,9 @@ const RegisterForm = () => {
 					{...register('confirmPassword')}
 					type='password'
 					placeholder='Confirm Password'
-					className='p-3 outline-none w-full border-b border-[--primary-color-light] bg-transparent'
+					className='p-3 outline-none w-full border-b border-primary-light bg-transparent'
 				/>
-				<p className='text-red-500 text-center text-sm'>
+				<p className='text-tertiary text-center text-sm'>
 					{errors.confirmPassword && 'Las contraseñas no coinciden!'}
 				</p>
 			</div>
