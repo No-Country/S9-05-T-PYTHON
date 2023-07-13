@@ -16,7 +16,7 @@ const Register = () => {
 						</Link>
 					</p>
 				</div>
-				<div className='bg-primary-light relative w-1/2 rounded-s'>
+				<div className='bg-secondary-light relative w-1/2 rounded-s'>
 					<img src={dog2} alt='dog' className='absolute bottom-0 w-3/4 ' />
 				</div>
 			</div>
