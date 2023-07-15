@@ -21,6 +21,7 @@ class PetModel(models.Model):
         'Name', 
         max_length=50
     )
+    description = models.TextField()
     breed = models.CharField(
         'Breed', 
         max_length=50,
@@ -76,8 +77,32 @@ class PetModel(models.Model):
         User,
         on_delete= models.CASCADE
     )
-    img_pet = models.ImageField(
-        'Img Pet', 
+    img_pet1 = models.ImageField(
+        'Img 1', 
+        upload_to='pet', 
+        blank= True,
+        null=True,
+    )
+    img_pet2 = models.ImageField(
+        'Img 2', 
+        upload_to='pet', 
+        blank= True,
+        null=True,
+    )
+    img_pet3 = models.ImageField(
+        'Img 3', 
+        upload_to='pet', 
+        blank= True,
+        null=True,
+    )
+    img_pet4 = models.ImageField(
+        'Img 4', 
+        upload_to='pet', 
+        blank= True,
+        null=True,
+    )
+    img_pet5 = models.ImageField(
+        'Img 5', 
         upload_to='pet', 
         blank= True,
         null=True,
