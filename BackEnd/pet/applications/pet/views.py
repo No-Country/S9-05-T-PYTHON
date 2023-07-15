@@ -12,7 +12,7 @@ from django.shortcuts import render
 # Models
 from .models import PetModel
 # Serializers
-from .serializers import PetSerializers, PetCreateSerializers
+from .serializers import PetSerializers, PetCreateSerializers, PetDetailSerializers
 
 
 class PetListApiView(ListAPIView):
@@ -37,8 +37,8 @@ class PetRetriApiView(RetrieveAPIView):
 
 
 class PetDestroyApiView(DestroyAPIView):
-    
-    serializer_class = PetCreateSerializers
+
+    serializer_class = PetDetailSerializers()
     queryset = PetModel.objects.all()
     
 

@@ -11,11 +11,20 @@ class PetSerializers(serializers.ModelSerializer):
             'full_name',
             'breed',
             'gender',
-            'age',
+            'description',
         )
 
 
 class PetCreateSerializers(serializers.ModelSerializer): 
+
+    class Meta:
+        model = PetModel
+        fields =(
+            '__all__'
+        )
+
+
+class PetDetailSerializers(serializers.ModelSerializer): 
 
     owner = RegistrationSerializer()
 
@@ -29,6 +38,7 @@ class PetCreateSerializers(serializers.ModelSerializer):
             'breed',
             'gender',
             'age',
+            'weight',
             'nationality',
             'vaccination_record',
             'chip',

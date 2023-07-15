@@ -8,8 +8,8 @@ class PetModel(models.Model):
     """Model definition for Pet."""
     
     gender_options= (
-        ('Male','Male'),
-        ('Famele','Famele'),
+        ('Macho','Macho'),
+        ('Hembra','Hembra'),
     )    
     img = models.ImageField(
         'Avatar', 
@@ -35,6 +35,9 @@ class PetModel(models.Model):
         null=True,
     )
     age = models.PositiveIntegerField(
+        default=0,
+    )
+    weight = models.PositiveIntegerField(
         default=0,
     )
     nationality = models.CharField(
