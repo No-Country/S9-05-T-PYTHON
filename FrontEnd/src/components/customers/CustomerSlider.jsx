@@ -10,7 +10,7 @@ import style from './testimonio.module.css';
 
 const CustomerSlider = () => {
 	return (
-		<section className='my-24 flex flex-col gap-4 items-center'>
+		<section className='py-24 flex flex-col gap-4 items-center'>
 			<h2 className='text-4xl'>Que dicen nuestros usuarios</h2>
 			<Swiper
 				slidesPerView={1}
@@ -57,7 +57,7 @@ const CustomerSlider = () => {
 					<SwiperSlide key={card.id}>
 						<section className='w-[100%]'>
 							<div className={`${style.section} my-7 relative`}>
-								<div className='w-80 h-80 shadow-2xl'>
+								<div className='w-80 h-80 shadow-2xl bg-white rounded-lg'>
 									<figure className='ml-[40%] w-[90px] mt-5'>
 										<img
 											src={card.image}

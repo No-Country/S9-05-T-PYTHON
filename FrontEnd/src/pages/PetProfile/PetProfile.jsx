@@ -1,7 +1,14 @@
+import { useParams } from 'react-router-dom';
 import petImg from '../../assets/img/pet.jpg';
 import profileAvatar from '../../assets/img/profile.jpg';
+import { useGetPetByIdQuery } from '../../store/api/apiSlice';
 
 const PetProfile = () => {
+	const params = useParams();
+
+	const { currentData } = useGetPetByIdQuery(params.id);
+	console.log(currentData);
+
 	return (
 		<section className='pt-28 pb-20 flex gap-5 w-full max-w-[1300px] min-h-screen items-start justify-between mx-auto'>
 			{/* Aside with pet's owner profile */}
@@ -13,7 +20,7 @@ const PetProfile = () => {
 				/>
 				<div className='flex flex-col gap-2'>
 					<h6 className='text-xl font-semibold text-primary-dark text-center'>
-						Pet owner name
+						Nombre del Dueño
 					</h6>
 					<p className='text-lg'>Location</p>
 					<div className='text-tertiary text-sm'>
@@ -30,45 +37,43 @@ const PetProfile = () => {
 			<div className='w-full flex flex-col gap-8'>
 				<div className='bg-white flex flex-col gap-4 rounded overflow-hidden shadow-md p-6'>
 					<h3 className='text-4xl font-semibold text-center text-tertiary'>
-						Nombre de la mascota
+						{currentData?.full_name}
 					</h3>
-					<img src={petImg} alt='pet' className='object-cover w-full h-80' />
+					<img
+						src={currentData?.img}
+						alt='pet'
+						className='object-cover w-full h-80'
+					/>
 					<h6 className='text-xl font-semibold text-[--primary-color-dark]'>
 						Datos de la mascota
 					</h6>
 					<hr className='h-[3px] bg-primary-light border-none mt-[-5px]' />
 					<div className='flex gap-4 items-start justify-between'>
-						<p className='w-[65ch]'>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora impedit
-							soluta omnis beatae corrupti totam sit, qui libero eveniet non, labore
-							debitis harum aperiam quod.Lorem ipsum dolor sit amet consectetur
-							adipisicing elit. Tempora impedit soluta omnis beatae corrupti totam sit,
-							qui libero eveniet non, labore debitis harum aperiam quod.
-						</p>
+						<p className='w-[65ch]'>{currentData?.description}</p>
 						<div className='columns-3 w-1/3'>
 							<div className='mb-2'>
-								<p className='font-semibold'>Gender</p>
-								<p className='text-primary'>Male</p>
+								<p className='font-semibold'>Género</p>
+								<p className='text-primary'>{currentData?.gender}</p>
 							</div>
 							<div className='mb-2'>
-								<p className='font-semibold'>Weight</p>
-								<p className='text-primary'>30 kg</p>
+								<p className='font-semibold'>Peso</p>
+								<p className='text-primary'>{currentData?.weight} kg</p>
 							</div>
 							<div className='mb-2'>
-								<p className='font-semibold'>Breed</p>
+								<p className='font-semibold'>Raza</p>
 								<p className='text-primary'>Caniche</p>
 							</div>
 							<div className='mb-2'>
-								<p className='font-semibold'>Age</p>
-								<p className='text-primary'>5 años</p>
+								<p className='font-semibold'>Edad</p>
+								<p className='text-primary'>{currentData?.age} años</p>
 							</div>
 							<div className='mb-2'>
-								<p className='font-semibold'>Nationality</p>
+								<p className='font-semibold'>Nacionalidad</p>
 								<p className='text-primary'>Argentino</p>
 							</div>
 							<div className='mb-2'>
 								<p className='font-semibold'>Chip</p>
-								<p className='text-primary'>Si</p>
+								<p className='text-primary'>{currentData?.chip ? 'Si' : 'No'}</p>
 							</div>
 						</div>
 					</div>
