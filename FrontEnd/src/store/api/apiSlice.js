@@ -18,7 +18,7 @@ export const apiSlice = createApi({
 		// Registra un usuario
 		registerUser: builder.mutation({
 			query: (userData) => ({
-				url: 'auth/register',
+				url: 'person/v1/accounts/register',
 				method: 'POST',
 				body: userData,
 			}),
@@ -26,14 +26,14 @@ export const apiSlice = createApi({
 		// Login de un usuario
 		loginUser: builder.mutation({
 			query: (userData) => ({
-				url: 'auth/authenticate',
+				url: 'person/v1/token',
 				method: 'POST',
 				body: userData,
 			}),
 		}),
 		// Trae todas las categorias
 		getPets: builder.query({
-			query: () => 'pet/api/list',
+			query: () => 'pet/api/list/',
 		}),
 		// Trae una mascota por el ID de la mascota
 		getPetById: builder.query({
@@ -45,6 +45,13 @@ export const apiSlice = createApi({
 				url: 'pet/api/create',
 				method: 'POST',
 				body: petData,
+			}),
+		}),
+		// Elimina una mascota con el ID de la mascota
+		updatePet: builder.mutation({
+			query: (id) => ({
+				url: `pet/api/update/${id}`,
+				method: 'PUT',
 			}),
 		}),
 		// Elimina una mascota con el ID de la mascota
@@ -60,6 +67,7 @@ export const apiSlice = createApi({
 export const {
 	useCreatePetMutation,
 	useEliminatePetMutation,
+	useUpdatePetMutation,
 	useGetPetByIdQuery,
 	useGetPetsQuery,
 	useLoginUserMutation,
