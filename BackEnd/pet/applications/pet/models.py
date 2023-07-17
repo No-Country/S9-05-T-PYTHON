@@ -56,6 +56,7 @@ class PetModel(models.Model):
         'Last Vaccine', 
         max_length=50,
         blank= True,
+        null=True,
     )
     last_vaccination = models.DateField(
         'Date last Vaccine', 
@@ -111,6 +112,9 @@ class PetModel(models.Model):
         upload_to='pet/', 
         blank= True,
         null=True,
+    )
+    peso = models.PositiveIntegerField(
+        default=0,
     )
     class Meta:
         """Meta definition for Pet."""

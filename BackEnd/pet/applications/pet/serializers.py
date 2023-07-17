@@ -25,6 +25,7 @@ class PetDetailSerializers(serializers.ModelSerializer):
     class Meta:
         model = PetModel
         fields = '__all__'
+   
         
 class PetCreateSerializers(serializers.ModelSerializer): 
 
@@ -60,6 +61,7 @@ class PetUpdateSerializers(serializers.ModelSerializer):
             'img_pet4',
             'img_pet5',
             'likes',
+            'peso',
         )
         
 

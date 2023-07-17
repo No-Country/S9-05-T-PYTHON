@@ -28,7 +28,6 @@ from rest_framework import generics, permissions
 
 
 
-
 class PetListApiView(ListAPIView):
     
     serializer_class = PetSerializers
@@ -42,17 +41,13 @@ class PetCreateApiView(CreateAPIView):
     
     serializer_class = PetCreateSerializers 
     queryset = PetModel.objects.all()
-
-    def post(self, request):
-        mi_variable = request.data.get('mi_variable')  # Obtén el dato enviado en el campo 'mi_variable'
-        pet = PetModel(owner=mi_variable)
-        pet.save()
-        return Response({'message': 'Dato recibido y almacenado correctamente'})
+    
     
 class MascotaViewSet(viewsets.ModelViewSet):
     
     serializer_class = PetDetailSerializers
     queryset = PetModel.objects.all()
+    
     
 class PetRetriApiView(RetrieveAPIView):
     
@@ -70,6 +65,7 @@ class PetUpdateApiView(RetrieveUpdateAPIView):
     
     serializer_class = PetUpdateSerializers
     queryset = PetModel.objects.all()
+
 
 class PetLikeApiView(RetrieveUpdateAPIView):
 
