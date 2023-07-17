@@ -35,7 +35,6 @@ DJANGO_APPS = (
 LOCAL_APPS = (
     'applications.person',
     'applications.pet',
-    'applications.conection',
     'applications',
 )
 

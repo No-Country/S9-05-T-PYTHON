@@ -1,6 +1,9 @@
+from django.conf import settings
 from django.db import models
 
 from django.contrib.auth.models import User
+from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 
@@ -65,6 +68,7 @@ class PetModel(models.Model):
         'Next Vaccine', 
         max_length=50,
         blank= True,
+        null=True,
     )
     next_vaccine = models.DateField(
         'Date Next Vaccine', 
@@ -74,36 +78,37 @@ class PetModel(models.Model):
         null=True,
     )
     owner = models.ForeignKey(
-        User,
-        on_delete= models.CASCADE
+        User, 
+        on_delete=models.CASCADE,
+        related_name='mascotas',
     )
     img_pet1 = models.ImageField(
         'Img 1', 
-        upload_to='pet', 
+        upload_to='pet/', 
         blank= True,
         null=True,
     )
     img_pet2 = models.ImageField(
         'Img 2', 
-        upload_to='pet', 
+        upload_to='pet/', 
         blank= True,
         null=True,
     )
     img_pet3 = models.ImageField(
         'Img 3', 
-        upload_to='pet', 
+        upload_to='pet/', 
         blank= True,
         null=True,
     )
     img_pet4 = models.ImageField(
         'Img 4', 
-        upload_to='pet', 
+        upload_to='pet/', 
         blank= True,
         null=True,
     )
     img_pet5 = models.ImageField(
         'Img 5', 
-        upload_to='pet', 
+        upload_to='pet/', 
         blank= True,
         null=True,
     )
@@ -112,6 +117,13 @@ class PetModel(models.Model):
 
         verbose_name = 'Pet'
         verbose_name_plural = 'Pets'
+        
+    likes = models.ManyToManyField(
+        User,
+        related_name='mascotas_likes', 
+        blank=True
+        )
+
 
     def __str__(self):
         """Unicode representation of Pet."""
