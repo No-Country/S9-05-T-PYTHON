@@ -56,7 +56,7 @@ const RegisterForm = () => {
 					{...register('name')}
 					placeholder='Full Name'
 					autoFocus
-					className='p-3 outline-none w-full border-b border-primary-light bg-transparent'
+					className='p-3 outline-none w-full border-b border-primary-light bg-white'
 				/>
 				<p className='text-tertiary text-center text-sm'>{errors.name?.message}</p>
 			</div>
@@ -64,7 +64,7 @@ const RegisterForm = () => {
 				<input
 					{...register('userName')}
 					placeholder='User Name'
-					className='p-3 outline-none w-full border-b border-primary-light bg-transparent'
+					className='p-3 outline-none w-full border-b border-primary-light bg-white'
 				/>
 				<p className='text-tertiary text-center text-sm'>
 					{errors.userName?.message}
@@ -74,7 +74,7 @@ const RegisterForm = () => {
 				<input
 					{...register('email')}
 					placeholder='Email'
-					className='p-3 outline-none w-full border-b border-primary-light bg-transparent'
+					className='p-3 outline-none w-full border-b border-primary-light bg-white'
 				/>
 				<p className='text-tertiary text-center text-sm'>{errors.email?.message}</p>
 			</div>
@@ -83,7 +83,7 @@ const RegisterForm = () => {
 					{...register('password')}
 					type='password'
 					placeholder='Password'
-					className='p-3 outline-none w-full border-b border-primary-light bg-transparent'
+					className='p-3 outline-none w-full border-b border-primary-light bg-white'
 				/>
 				<p className='text-tertiary text-center text-sm'>
 					{errors.password?.message}
@@ -94,7 +94,7 @@ const RegisterForm = () => {
 					{...register('confirmPassword')}
 					type='password'
 					placeholder='Confirm Password'
-					className='p-3 outline-none w-full border-b border-primary-light bg-transparent'
+					className='p-3 outline-none w-full border-b border-primary-light bg-white'
 				/>
 				<p className='text-tertiary text-center text-sm'>
 					{errors.confirmPassword && 'Las contraseñas no coinciden!'}

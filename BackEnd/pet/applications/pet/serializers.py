@@ -18,7 +18,7 @@ class PetSerializers(serializers.ModelSerializer):
         )
 
 
-class PetDetailSerializers(serializers.ModelSerializer): 
+class PetCreateSerializers(serializers.ModelSerializer): 
 
     owner = RegistrationSerializer()
 

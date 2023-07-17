@@ -18,7 +18,6 @@ from django.shortcuts import render
 from .models import PetModel, User
 # Serializers
 from .serializers import (
-    PetDetailSerializers, 
     PetSerializers, 
     PetUpdateSerializers,
     PetCreateSerializers,
@@ -26,6 +25,7 @@ from .serializers import (
     )
 from rest_framework import generics, permissions
 
+from .serializers import PetSerializers, PetCreateSerializers
 
 
 class PetListApiView(ListAPIView):
@@ -45,19 +45,19 @@ class PetCreateApiView(CreateAPIView):
     
 class MascotaViewSet(viewsets.ModelViewSet):
     
-    serializer_class = PetDetailSerializers
+    serializer_class = PetCreateSerializers
     queryset = PetModel.objects.all()
     
     
 class PetRetriApiView(RetrieveAPIView):
     
-    serializer_class = PetDetailSerializers
+    serializer_class = PetCreateSerializers
     queryset = PetModel.objects.all()
 
 
 class PetDestroyApiView(DestroyAPIView):
     
-    serializer_class = PetDetailSerializers()
+    serializer_class = PetCreateSerializers()
     queryset = PetModel.objects.all()
     
     

@@ -6,7 +6,7 @@ const Register = () => {
 	return (
 		<div className='w-full min-h-screen grid place-items-center'>
 			<div className='flex flex-row-reverse w-[900px] min-h-[600px] rounded shadow-primary shadow-2xl'>
-				<div className='p-10 flex flex-col items-center justify-center gap-5 w-1/2'>
+				<div className='p-10 flex flex-col items-center justify-center gap-5 w-1/2 bg-white'>
 					<h4 className='text-4xl text-primary font-semibold'>Registro</h4>
 					<RegisterForm />
 					<p>
