@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import * as yup from 'yup';
+import { useCreatePetMutation } from '../../../store/api/apiSlice';
 
 const schema = yup
 	.object({
@@ -18,16 +19,22 @@ const schema = yup
 			.positive()
 			.typeError('Por favor ingrese un número válido')
 			.required('Por favor complete el campo requerido'),
-		weight: yup
+		peso: yup
 			.number()
 			.positive()
 			.typeError('Por favor ingrese un número válido')
 			.required('Por favor complete el campo requerido'),
 		nationality: yup.string().required('Por favor complete el campo requerido'),
+		chip: yup.boolean(),
+		img: yup.mixed().test('required', 'Por favor suba una imagen', (value) => {
+			return value[0]?.name && !undefined;
+		}),
 	})
 	.required();
 
 const CreatePetForm = () => {
+	const [createPet] = useCreatePetMutation();
+
 	const MySwal = withReactContent(Swal);
 
 	const {
@@ -41,20 +48,32 @@ const CreatePetForm = () => {
 	});
 
 	const formSubmit = (data) => {
-		reset();
-		console.log(data);
+		let formData = new FormData();
+		formData.append('full_name', data.full_name);
+		formData.append('description', data.description);
+		formData.append('breed', data.breed);
+		formData.append('gender', data.gender);
+		formData.append('age', data.age);
+		formData.append('chip', data.chip);
+		formData.append('peso', data.peso);
+		formData.append('owner', 1);
+		formData.append('nationality', data.nationality);
+		formData.append('img', data.img[0]);
+		createPet(formData);
 
 		MySwal.fire({
 			title: 'Registro exitoso!!',
 			icon: 'success',
 			scrollbarPadding: false,
 		});
+
+		reset();
 	};
 
 	return (
 		<form
 			onSubmit={handleSubmit(formSubmit)}
-			className='flex flex-col items-center justify-center gap-5 w-full'>
+			className='flex flex-col items-center justify-center gap-5 max-w-[1300px] h-screen mx-auto'>
 			<div className='w-full'>
 				<input
 					{...register('full_name')}
@@ -79,6 +98,7 @@ const CreatePetForm = () => {
 			<div className='w-full'>
 				<input
 					{...register('breed')}
+					placeholder='Raza'
 					className='p-3 outline-none w-full border-b border-primary-light bg-white'
 				/>
 				<p className='text-tertiary text-center text-sm'>{errors.breed?.message}</p>
@@ -86,7 +106,6 @@ const CreatePetForm = () => {
 			<div className='w-full'>
 				<select
 					{...register('gender')}
-					placeholder=''
 					className='p-3 outline-none w-full border-b border-primary-light bg-white'>
 					<option value='Macho'>Macho</option>
 					<option value='Hembra'>Hembra</option>
@@ -105,13 +124,11 @@ const CreatePetForm = () => {
 			</div>
 			<div className='w-full'>
 				<input
-					{...register('weight')}
+					{...register('peso')}
 					placeholder='Peso'
 					className='p-3 outline-none w-full border-b border-primary-light bg-white'
 				/>
-				<p className='text-tertiary text-center text-sm'>
-					{errors.weight?.message}
-				</p>
+				<p className='text-tertiary text-center text-sm'>{errors.peso?.message}</p>
 			</div>
 			<div className='w-full'>
 				<input
@@ -123,6 +140,10 @@ const CreatePetForm = () => {
 					{errors.nationality?.message}
 				</p>
 			</div>
+			<div className='w-full flex items-center gap-4'>
+				<label htmlFor='chip'>Chip</label>
+				<input {...register('chip')} type='checkbox' id='chip' />
+			</div>
 			<div className='w-full'>
 				<input
 					{...register('img')}
@@ -130,9 +151,7 @@ const CreatePetForm = () => {
 					accept='.jpg, .jpeg, .png'
 					className='p-3 outline-none w-full border-b border-primary-light bg-white'
 				/>
-				<p className='text-tertiary text-center text-sm'>
-					{errors.nationality?.message}
-				</p>
+				<p className='text-tertiary text-center text-sm'>{errors.img?.message}</p>
 			</div>
 			<button
 				type='submit'

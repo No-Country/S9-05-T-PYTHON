@@ -11,7 +11,6 @@ const Navbar = () => {
 				<Link to='/'>Home</Link>
 				<Link to='/matchs'>Mascotas</Link>
 				<Link to='/user-profile'>User Profile</Link>
-				<Link to='/pet-profile'>Pet Profile</Link>
 			</div>
 			<div className='flex gap-7 font-title'>
 				<button className='bg-primary px-5 py-3 rounded-md hover:bg-primary-dark transition-all text-white shadow-md'>

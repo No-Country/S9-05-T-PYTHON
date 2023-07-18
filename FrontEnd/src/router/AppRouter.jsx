@@ -11,6 +11,7 @@ import PetProfile from '../pages/PetProfile/PetProfile';
 import Register from '../pages/Register/Register';
 import Matchs from '../pages/matchs/Matchs';
 import UserProfile from '../pages/UserProfile/UserProfile';
+import CreatePetForm from '../pages/UserProfile/components/CreatePetForm';
 
 export const AppRouter = createBrowserRouter(
 	createRoutesFromElements(
@@ -24,6 +25,7 @@ export const AppRouter = createBrowserRouter(
 				<Route path='/matchs' element={<Matchs />} />
 				<Route path='/pet-profile/:id' element={<PetProfile />} />
 				<Route path='/user-profile' element={<UserProfile />} />
+				<Route path='/create-pet' element={<CreatePetForm />} />
 			</>
 			<Route path='*' element={<Error404 />} />
 		</Route>
