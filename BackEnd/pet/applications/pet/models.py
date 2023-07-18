@@ -16,7 +16,7 @@ class PetModel(models.Model):
     )    
     img = models.ImageField(
         'Avatar', 
-        upload_to='pet', 
+        upload_to='pet/', 
         blank= True,
         null=True,
     )

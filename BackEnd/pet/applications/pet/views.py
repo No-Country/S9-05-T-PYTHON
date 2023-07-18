@@ -13,6 +13,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 # Django
+from rest_framework.parsers import MultiPartParser, FormParser
 from django.shortcuts import render
 # Models
 from .models import PetModel, User
@@ -38,9 +39,10 @@ class PetListApiView(ListAPIView):
     
     
 class PetCreateApiView(CreateAPIView):
-    
+
     serializer_class = PetCreateSerializers 
     queryset = PetModel.objects.all()
+    parser_classes = [MultiPartParser, FormParser]
     
     
 class MascotaViewSet(viewsets.ModelViewSet):
