@@ -1,30 +1,18 @@
 from django.db import models
+from django.contrib.auth.models import User
+from  django.db.models.signals import post_save
+from django.dispatch import receiver
 
 
-
-class PersonModel(models.Model):
+class Profile(models.Model):
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    nationality = models.CharField(max_length=255,blank=True,null=True)
+    age = models.IntegerField(blank=True,null=True)
+    phone = models.IntegerField(blank=True,null=True)
     
-    """Model definition for Person."""
-    first_name = models.CharField(
-        'Name', 
-        max_length=50
-    )
-    last_name = models.CharField(
-        'Last Name', 
-        max_length=50
-    )
-    email = models.EmailField(
-        'Email', 
-        max_length=254
-    )
-    edad = models.PositiveIntegerField(default=0)
-    nationality = models.CharField(
-        'Nationality', 
-        max_length=20
-    )
-    
-
-
     def __str__(self):
-        """Unicode representation of Person."""
-        return self.first_name
+        return f'Perfil de {self.user.username}'
+    
+@receiver(post_save,sender=User)
+def user_created(sender,instance,created,**kwargs):
+    Profile.objects.create(user=instance)

@@ -3,11 +3,12 @@ import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import * as yup from 'yup';
+import { useRegisterUserMutation } from '../../../store/api/apiSlice';
 
 const schema = yup
 	.object({
 		name: yup.string().required('Por favor complete el campo requerido'),
-		userName: yup.string().required('Por favor complete el campo requerido'),
+		username: yup.string().required('Por favor complete el campo requerido'),
 		email: yup
 			.string()
 			.email('Por favor ingrese un email válido')
@@ -24,6 +25,8 @@ const schema = yup
 	.required();
 
 const RegisterForm = () => {
+	const [registerUser] = useRegisterUserMutation();
+
 	const MySwal = withReactContent(Swal);
 
 	const {
@@ -37,14 +40,16 @@ const RegisterForm = () => {
 	});
 
 	const formSubmit = (data) => {
-		reset();
 		console.log(data);
+		registerUser(data);
 
 		MySwal.fire({
 			title: 'Registro exitoso!!',
 			icon: 'success',
 			scrollbarPadding: false,
 		});
+
+		reset();
 	};
 
 	return (
@@ -54,38 +59,38 @@ const RegisterForm = () => {
 			<div className='w-full'>
 				<input
 					{...register('name')}
-					placeholder='Full Name'
+					placeholder='Nombre completo'
 					autoFocus
-					className='p-3 outline-none w-full border-b border-[--primary-color-light] bg-transparent'
+					className='p-3 outline-none w-full border-b border-primary-light bg-white'
 				/>
-				<p className='text-red-500 text-center text-sm'>{errors.name?.message}</p>
+				<p className='text-tertiary text-center text-sm'>{errors.name?.message}</p>
 			</div>
 			<div className='w-full'>
 				<input
-					{...register('userName')}
-					placeholder='User Name'
-					className='p-3 outline-none w-full border-b border-[--primary-color-light] bg-transparent'
+					{...register('username')}
+					placeholder='Nombre de usuario'
+					className='p-3 outline-none w-full border-b border-primary-light bg-white'
 				/>
-				<p className='text-red-500 text-center text-sm'>
-					{errors.userName?.message}
+				<p className='text-tertiary text-center text-sm'>
+					{errors.username?.message}
 				</p>
 			</div>
 			<div className='w-full'>
 				<input
 					{...register('email')}
 					placeholder='Email'
-					className='p-3 outline-none w-full border-b border-[--primary-color-light] bg-transparent'
+					className='p-3 outline-none w-full border-b border-primary-light bg-white'
 				/>
-				<p className='text-red-500 text-center text-sm'>{errors.email?.message}</p>
+				<p className='text-tertiary text-center text-sm'>{errors.email?.message}</p>
 			</div>
 			<div className='w-full'>
 				<input
 					{...register('password')}
 					type='password'
-					placeholder='Password'
-					className='p-3 outline-none w-full border-b border-[--primary-color-light] bg-transparent'
+					placeholder='Contraseña'
+					className='p-3 outline-none w-full border-b border-primary-light bg-white'
 				/>
-				<p className='text-red-500 text-center text-sm'>
+				<p className='text-tertiary text-center text-sm'>
 					{errors.password?.message}
 				</p>
 			</div>
@@ -93,10 +98,10 @@ const RegisterForm = () => {
 				<input
 					{...register('confirmPassword')}
 					type='password'
-					placeholder='Confirm Password'
-					className='p-3 outline-none w-full border-b border-[--primary-color-light] bg-transparent'
+					placeholder='Confirmar contraseña'
+					className='p-3 outline-none w-full border-b border-primary-light bg-white'
 				/>
-				<p className='text-red-500 text-center text-sm'>
+				<p className='text-tertiary text-center text-sm'>
 					{errors.confirmPassword && 'Las contraseñas no coinciden!'}
 				</p>
 			</div>

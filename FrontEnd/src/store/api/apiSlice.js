@@ -9,7 +9,6 @@ export const apiSlice = createApi({
 			const token = getState().auth.token;
 			if (token) {
 				headers.set('authorization', `Bearer ${token}`);
-				headers.set('accept', 'application/json');
 			}
 			return headers;
 		},
@@ -18,7 +17,7 @@ export const apiSlice = createApi({
 		// Registra un usuario
 		registerUser: builder.mutation({
 			query: (userData) => ({
-				url: 'auth/register',
+				url: 'person/v1/accounts/register',
 				method: 'POST',
 				body: userData,
 			}),
@@ -26,25 +25,33 @@ export const apiSlice = createApi({
 		// Login de un usuario
 		loginUser: builder.mutation({
 			query: (userData) => ({
-				url: 'auth/authenticate',
+				url: 'person/v1/token/',
 				method: 'POST',
 				body: userData,
 			}),
 		}),
 		// Trae todas las categorias
 		getPets: builder.query({
-			query: () => 'pet/api/list',
+			query: () => 'pet/api/list/',
 		}),
 		// Trae una mascota por el ID de la mascota
 		getPetById: builder.query({
-			query: (id) => `pet/api/retri/${id}`,
+			query: (id) => `pet/api/detail/${id}`,
 		}),
 		// Crea una mascota con el ID del usuario
 		createPet: builder.mutation({
 			query: (petData) => ({
-				url: 'pet/api/create',
+				url: 'pet/api/create/',
 				method: 'POST',
+				// headers: { 'Content-Type': 'multipart/form-data' },
 				body: petData,
+			}),
+		}),
+		// Elimina una mascota con el ID de la mascota
+		updatePet: builder.mutation({
+			query: (id) => ({
+				url: `pet/api/update/${id}`,
+				method: 'PUT',
 			}),
 		}),
 		// Elimina una mascota con el ID de la mascota
@@ -60,6 +67,7 @@ export const apiSlice = createApi({
 export const {
 	useCreatePetMutation,
 	useEliminatePetMutation,
+	useUpdatePetMutation,
 	useGetPetByIdQuery,
 	useGetPetsQuery,
 	useLoginUserMutation,

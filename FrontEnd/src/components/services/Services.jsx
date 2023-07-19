@@ -6,12 +6,12 @@ import { LuHotel } from 'react-icons/lu';
 
 const Services = () => {
 	const divContainerServices =
-		'p-4 flex flex-col justify-evenly items-center text-center rounded-lg m-4 min-h-[250px] w-[75%] lg:w-[85%] gap-2 border-2 border-[--primary-color-dark]';
-	const iconServices = 'text-3xl text-[--primary-color-dark]';
+		'p-4 flex flex-col justify-evenly items-center text-center rounded-lg m-4 min-h-[250px] w-[75%] lg:w-[85%] gap-2 border-2 border-primary-dark bg-white';
+	const iconServices = 'text-3xl text-primary-dark';
 	const titleServices = 'text-2xl font-bold';
 	const descriptionServices = 'text-xl font-medium';
 	const buttonServices =
-		'rounded-xl p-2 bg-[--primary-color] text-[--white] hover:bg-[--primary-color-dark] font-medium';
+		'rounded-xl p-2 bg-primary text-white hover:bg-primary-dark font-medium';
 	return (
 		<section className='flex flex-col items-center max-w-[1300px] mx-auto my-24'>
 			<h3 className='text-4xl p-4'>Servicios</h3>
