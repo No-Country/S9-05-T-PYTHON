@@ -1,5 +1,4 @@
 import { useParams } from 'react-router-dom';
-import petImg from '../../assets/img/pet.jpg';
 import profileAvatar from '../../assets/img/profile.jpg';
 import { useGetPetByIdQuery } from '../../store/api/apiSlice';
 
@@ -7,12 +6,18 @@ const PetProfile = () => {
 	const params = useParams();
 
 	const { currentData } = useGetPetByIdQuery(params.id);
-	console.log(currentData);
+	const images = [
+		currentData?.img_pet1,
+		currentData?.img_pet2,
+		currentData?.img_pet3,
+		currentData?.img_pet4,
+		currentData?.img_pet5,
+	];
 
 	return (
 		<section className='pt-28 pb-20 flex gap-5 w-full max-w-[1300px] min-h-screen items-start justify-between mx-auto'>
 			{/* Aside with pet's owner profile */}
-			<div className='flex flex-col gap-3 w-64 bg-white rounded overflow-hidden shadow-md p-5'>
+			<div className='flex flex-col gap-3 flex-shrink-0 w-60 bg-white rounded overflow-hidden shadow-md p-5'>
 				<img
 					src={profileAvatar}
 					alt='avatar'
@@ -49,7 +54,7 @@ const PetProfile = () => {
 					</h6>
 					<hr className='h-[3px] bg-primary-light border-none mt-[-5px]' />
 					<div className='flex gap-4 items-start justify-between'>
-						<p className='w-[65ch]'>{currentData?.description}</p>
+						<p className='w-[65ch] break-words'>{currentData?.description}</p>
 						<div className='columns-3 w-1/3'>
 							<div className='mb-2'>
 								<p className='font-semibold'>Género</p>
@@ -57,11 +62,11 @@ const PetProfile = () => {
 							</div>
 							<div className='mb-2'>
 								<p className='font-semibold'>Peso</p>
-								<p className='text-primary'>{currentData?.weight} kg</p>
+								<p className='text-primary'>{currentData?.peso} kg</p>
 							</div>
 							<div className='mb-2'>
 								<p className='font-semibold'>Raza</p>
-								<p className='text-primary'>Caniche</p>
+								<p className='text-primary'>{currentData?.breed}</p>
 							</div>
 							<div className='mb-2'>
 								<p className='font-semibold'>Edad</p>
@@ -69,7 +74,7 @@ const PetProfile = () => {
 							</div>
 							<div className='mb-2'>
 								<p className='font-semibold'>Nacionalidad</p>
-								<p className='text-primary'>Argentino</p>
+								<p className='text-primary'>{currentData?.nationality}</p>
 							</div>
 							<div className='mb-2'>
 								<p className='font-semibold'>Chip</p>
@@ -81,31 +86,16 @@ const PetProfile = () => {
 				<div className='bg-tertiary flex flex-col gap-4 rounded overflow-hidden shadow-md p-6'>
 					<h3 className='text-4xl font-semibold text-center text-white'>Galería</h3>
 					<div className='flex flex-wrap gap-3 justify-evenly'>
-						<img
-							src={petImg}
-							alt='gallery'
-							className='object-cover w-48 h-48 rounded-lg shadow-md'
-						/>
-						<img
-							src={petImg}
-							alt='gallery'
-							className='object-cover w-48 h-48 rounded-lg shadow-md'
-						/>
-						<img
-							src={petImg}
-							alt='gallery'
-							className='object-cover w-48 h-48 rounded-lg shadow-md'
-						/>
-						<img
-							src={petImg}
-							alt='gallery'
-							className='object-cover w-48 h-48 rounded-lg shadow-md'
-						/>
-						<img
-							src={petImg}
-							alt='gallery'
-							className='object-cover w-48 h-48 rounded-lg shadow-md'
-						/>
+						{images?.map((img, index) => {
+							return (
+								<img
+									src={img}
+									alt='gallery'
+									className='object-cover w-48 h-48 rounded-lg shadow-md'
+									key={index}
+								/>
+							);
+						})}
 					</div>
 				</div>
 			</div>

@@ -17,16 +17,20 @@ urlpatterns = [
         views.PetCreateApiView.as_view(),
     ),
     path(
-        'api/retri/<pk>/',
+        'api/detail/<pk>/',
         views.PetRetriApiView.as_view(),
     ),
     path(
-        'api/destroy/<pk>/',
+        'api/delete/<pk>/',
         views.PetDestroyApiView.as_view(),
     ),
     path(
         'api/update/<pk>/',
         views.PetUpdateApiView.as_view(),
+    ),
+    path(
+        'api/like/<pk>/',
+        views.PetLikeApiView.as_view(),
     ),
 
 

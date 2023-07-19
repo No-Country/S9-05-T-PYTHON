@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const CardMatch = ({ info }) => {
 	const [match, setMatch] = useState(false);
 	return (
-		<div className='flex flex-col justify-around items-center text-center min-w-[200px] max-w-[400px] min-h-[400px] px-4 my-[2em] mx-[1em] rounded-lg shadow-lg hover:shadow-primary hover:scale-[1.05] transition-all bg-white'>
+		<div className='flex flex-col justify-around items-center text-center min-w-[250px] w-full max-w-[400px] min-h-[400px] px-4 my-[2em] mx-[1em] rounded-lg shadow-lg hover:shadow-primary hover:scale-[1.05] transition-all bg-white'>
 			<div className='w-[100%] flex flex-col md:flex-row justify-around items-center'>
 				<img src={info.img} alt='/' className='w-[150px] rounded-3xl' />
 				<div className='flex flex-col'>
@@ -13,7 +13,7 @@ const CardMatch = ({ info }) => {
 					<p className='text-xl'>{info.gender}</p>
 				</div>
 			</div>
-			<p>{info.description}</p>
+			<p className='card-text'>{info.description}</p>
 			<div className='w-[100%] flex justify-around items-center'>
 				<button
 					onClick={() => {

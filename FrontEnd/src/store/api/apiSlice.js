@@ -9,7 +9,6 @@ export const apiSlice = createApi({
 			const token = getState().auth.token;
 			if (token) {
 				headers.set('authorization', `Bearer ${token}`);
-				headers.set('accept', 'application/json');
 			}
 			return headers;
 		},
@@ -26,7 +25,7 @@ export const apiSlice = createApi({
 		// Login de un usuario
 		loginUser: builder.mutation({
 			query: (userData) => ({
-				url: 'person/v1/token',
+				url: 'person/v1/token/',
 				method: 'POST',
 				body: userData,
 			}),
@@ -37,13 +36,14 @@ export const apiSlice = createApi({
 		}),
 		// Trae una mascota por el ID de la mascota
 		getPetById: builder.query({
-			query: (id) => `pet/api/retri/${id}`,
+			query: (id) => `pet/api/detail/${id}`,
 		}),
 		// Crea una mascota con el ID del usuario
 		createPet: builder.mutation({
 			query: (petData) => ({
-				url: 'pet/api/create',
+				url: 'pet/api/create/',
 				method: 'POST',
+				// headers: { 'Content-Type': 'multipart/form-data' },
 				body: petData,
 			}),
 		}),

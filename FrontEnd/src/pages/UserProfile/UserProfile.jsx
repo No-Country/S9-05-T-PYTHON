@@ -4,8 +4,8 @@ import banner from '../../assets/hero.webp';
 import avatar from '../../assets/img/profile.jpg';
 import PetCard from './components/PetCard';
 import UserEditForm from './components/UserEditForm';
-import CreatePetForm from './components/CreatePetForm';
 import { useGetPetsQuery } from '../../store/api/apiSlice';
+import { Link } from 'react-router-dom';
 
 const UserProfile = () => {
 	const { currentData } = useGetPetsQuery();
@@ -16,15 +16,6 @@ const UserProfile = () => {
 	const handleEditUser = () => {
 		MySwal.fire({
 			html: <UserEditForm />,
-			showConfirmButton: false,
-			width: 'fit-content',
-			scrollbarPadding: false,
-		});
-	};
-
-	const handleCreatePet = () => {
-		MySwal.fire({
-			html: <CreatePetForm />,
 			showConfirmButton: false,
 			width: 'fit-content',
 			scrollbarPadding: false,
@@ -65,11 +56,11 @@ const UserProfile = () => {
 						<h4 className='text-4xl font-semibold text-center text-tertiary'>
 							Mis mascotas
 						</h4>
-						<button
-							className='bg-secondary px-5 py-2 rounded-lg hover:bg-secondary-light transition-all shadow-md font-title font-bold'
-							onClick={handleCreatePet}>
-							Agregar mascotas
-						</button>
+						<Link to='/create-pet'>
+							<button className='bg-secondary px-5 py-2 rounded-lg hover:bg-secondary-light transition-all shadow-md font-title font-bold'>
+								Agregar mascotas
+							</button>
+						</Link>
 					</div>
 					<hr className='h-[2px] bg-primary-light border-none mb-10' />
 					<div className='flex-1 grid grid-cols-2 place-items-center gap-y-10'>

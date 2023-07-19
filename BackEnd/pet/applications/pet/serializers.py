@@ -1,6 +1,8 @@
 from rest_framework import serializers
-from .models import PetModel
+from .models import PetModel, User
 from applications.person.serializer import RegistrationSerializer
+
+
 class PetSerializers(serializers.ModelSerializer):
     
     class Meta:
@@ -12,21 +14,28 @@ class PetSerializers(serializers.ModelSerializer):
             'breed',
             'gender',
             'description',
+            'likes',
         )
 
 
 class PetCreateSerializers(serializers.ModelSerializer): 
 
+    owner = RegistrationSerializer()
+
     class Meta:
         model = PetModel
-        fields =(
-            '__all__'
-        )
+        fields = '__all__'
+   
+        
+class PetCreateSerializers(serializers.ModelSerializer): 
 
+    class Meta:
+        model = PetModel
+        fields = '__all__'
+        
 
-class PetDetailSerializers(serializers.ModelSerializer): 
+class PetUpdateSerializers(serializers.ModelSerializer): 
 
-    owner = RegistrationSerializer()
 
     class Meta:
         model = PetModel
@@ -36,9 +45,9 @@ class PetDetailSerializers(serializers.ModelSerializer):
             'full_name',
             'description',
             'breed',
+            'description',
             'gender',
             'age',
-            'weight',
             'nationality',
             'vaccination_record',
             'chip',
@@ -46,11 +55,21 @@ class PetDetailSerializers(serializers.ModelSerializer):
             'last_vaccination',
             'date_vaccine1',
             'next_vaccine',
-            'owner',
             'img_pet1',
             'img_pet2',
             'img_pet3',
             'img_pet4',
             'img_pet5',
+            'likes',
+            'peso',
         )
         
+
+class PetLikeSerializers(serializers.ModelSerializer): 
+
+
+    class Meta:
+        model = PetModel
+        fields =(
+            'likes',
+        )
