@@ -13,6 +13,7 @@ const PetProfile = () => {
 		currentData?.img_pet4,
 		currentData?.img_pet5,
 	];
+	console.log(currentData?.img);
 
 	return (
 		<section className='pt-28 pb-20 flex gap-5 w-full max-w-[1300px] min-h-screen items-start justify-between mx-auto'>
@@ -87,6 +88,7 @@ const PetProfile = () => {
 					<h3 className='text-4xl font-semibold text-center text-white'>Galería</h3>
 					<div className='flex flex-wrap gap-3 justify-evenly'>
 						{images?.map((img, index) => {
+							console.log(img);
 							return (
 								<img
 									src={img}
