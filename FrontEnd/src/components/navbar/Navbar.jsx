@@ -26,15 +26,15 @@ const Navbar = () => {
 						(
 							<>
 								<IoMdClose onClick={() => setIsOpenMenu(false)} className=' h-8 w-8 text-body-light' />
-								<div className='absolute -left-[90vw] sm:-left-[94vw] md:-left-[95vw] lg:hidden flex flex-col bg-primary-light w-[100vw] h-[30vh] mt-12'>
-									<div className='mt-3  bg-primary-light  h-[100vh] w-full pl-5 md:pl-9'>
-										<div onClick={() => setIsOpenMenu(false)} className=' flex flex-col gap-3 font-title lg:text-xl w-full py-3 px-3'>
-											<Link className='hover:bg-primary' to='/'>Home</Link>
-											<Link className='hover:bg-primary' to='/matchs'>Mascotas</Link>
-											<Link className='hover:bg-primary' to='/user-profile'>User Profile</Link>
-											<Link className='hover:bg-primary' to='/pet-profile'>Pet Profile</Link>
+								<div className='absolute -left-[88.5vw] sm:-left-[95vw] md:-left-[94.5vw] lg:hidden flex flex-col justify-around bg-primary-light w-[100vw] h-[30dvh] mt-12'>
+									<div onClick={() => setIsOpenMenu(false)} className='p-3 mt-3  bg-primary-light  h-[100vh] w-full pl-5 md:pl-9'>
+										<div className=' flex flex-col gap-3 font-title lg:text-xl w-full py-3 px-3'>
+											<Link className='hover:bg-primary hover:text-white' to='/'>Home</Link>
+											<Link className='hover:bg-primary hover:text-white' to='/matchs'>Mascotas</Link>
+											<Link className='hover:bg-primary hover:text-white' to='/user-profile'>User Profile</Link>
+											<Link className='hover:bg-primary hover:text-white' to='/pet-profile'>Pet Profile</Link>
 										</div>
-										<div className=' gap-4 font-title flex place-items-center px-2 '>
+										<div className=' gap-4 font-title flex place-items-center px-2 mb-0'>
 											<button className='bg-primary text-white rounded-md hover:bg-primary-dark transition-all shadow-md py-3 px-3'>
 												<Link to='/auth/login'>Ingresar</Link>
 											</button>
