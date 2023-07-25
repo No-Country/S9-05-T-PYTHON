@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import * as yup from 'yup';
 import { useRegisterUserMutation } from '../../../store/api/apiSlice';
+import { useEffect } from 'react';
 
 const schema = yup
 	.object({
@@ -25,7 +26,7 @@ const schema = yup
 	.required();
 
 const RegisterForm = () => {
-	const [registerUser] = useRegisterUserMutation();
+	const [registerUser, { isSuccess, isError }] = useRegisterUserMutation();
 
 	const MySwal = withReactContent(Swal);
 
@@ -43,14 +44,24 @@ const RegisterForm = () => {
 		console.log(data);
 		registerUser(data);
 
-		MySwal.fire({
-			title: 'Registro exitoso!!',
-			icon: 'success',
-			scrollbarPadding: false,
-		});
-
 		reset();
 	};
+
+	useEffect(() => {
+		if (isSuccess) {
+			MySwal.fire({
+				title: 'Registro exitoso!!',
+				icon: 'success',
+				scrollbarPadding: false,
+			});
+		} else if (isError) {
+			MySwal.fire({
+				title: 'Registro fallido!!',
+				icon: 'error',
+				scrollbarPadding: false,
+			});
+		}
+	}, [isSuccess, isError]);
 
 	return (
 		<form

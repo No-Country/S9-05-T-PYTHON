@@ -88,33 +88,28 @@ class PetModel(models.Model):
     )
     img_pet1 = models.ImageField(
         'Img 1', 
-        upload_to='pet/', 
-        blank= True,
-        null=True,
+        upload_to='pet/',
+        default='pet/default.png'
     )
     img_pet2 = models.ImageField(
         'Img 2', 
-        upload_to='pet/', 
-        blank= True,
-        null=True,
+        upload_to='pet/',
+        default='pet/default.png'
     )
     img_pet3 = models.ImageField(
         'Img 3', 
-        upload_to='pet/', 
-        blank= True,
-        null=True,
+        upload_to='pet/',
+        default='pet/default.png'
     )
     img_pet4 = models.ImageField(
         'Img 4', 
-        upload_to='pet/', 
-        blank= True,
-        null=True,
+        upload_to='pet/',
+        default='pet/default.png'
     )
     img_pet5 = models.ImageField(
         'Img 5', 
-        upload_to='pet/', 
-        blank= True,
-        null=True,
+        upload_to='pet/',
+        default='pet/default.png'
     )
     peso = models.PositiveIntegerField(
         default=0,
