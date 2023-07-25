@@ -38,6 +38,10 @@ export const apiSlice = createApi({
 		getPetById: builder.query({
 			query: (id) => `pet/api/detail/${id}`,
 		}),
+		// Trae los likes por el ID de la mascota
+		getLikeById: builder.query({
+			query: (id) => `pet/api/like/${id}`,
+		}),
 		// Crea una mascota con el ID del usuario
 		createPet: builder.mutation({
 			query: (petData) => ({
@@ -70,6 +74,7 @@ export const {
 	useUpdatePetMutation,
 	useGetPetByIdQuery,
 	useGetPetsQuery,
+	useGetLikeByIdQuery,
 	useLoginUserMutation,
 	useRegisterUserMutation,
 } = apiSlice;

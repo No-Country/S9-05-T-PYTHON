@@ -10,6 +10,7 @@ import { Home } from '../pages';
 import PetProfile from '../pages/PetProfile/PetProfile';
 import Register from '../pages/Register/Register';
 import Matchs from '../pages/matchs/Matchs';
+import MatchsList from '../pages/matchs/components/MatchsList';
 import UserProfile from '../pages/UserProfile/UserProfile';
 import CreatePetForm from '../pages/UserProfile/components/CreatePetForm';
 
@@ -23,6 +24,7 @@ export const AppRouter = createBrowserRouter(
 			<>
 				<Route index element={<Home />} />
 				<Route path='/matchs' element={<Matchs />} />
+				<Route path='/matchs/:id' element={<MatchsList />} />
 				<Route path='/pet-profile/:id' element={<PetProfile />} />
 				<Route path='/user-profile' element={<UserProfile />} />
 				<Route path='/create-pet' element={<CreatePetForm />} />

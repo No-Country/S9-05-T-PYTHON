@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import profileAvatar from '../../assets/img/profile.jpg';
 import { useGetPetByIdQuery } from '../../store/api/apiSlice';
+import { Link } from 'react-router-dom';
 
 const PetProfile = () => {
 	const params = useParams();
@@ -36,6 +37,9 @@ const PetProfile = () => {
 					<button className='bg-secondary px-5 py-2 rounded font-semibold hover:bg-secondary-light transition-all shadow-md mt-2 self-center w-full'>
 						Contactar
 					</button>
+					<Link to={`/matchs/${params.id}`} className='bg-primary text-white px-5 py-2 rounded font-semibold hover:bg-primary-light transition-all shadow-md mt-2 self-center w-full'>
+						Matchs
+					</Link>
 				</div>
 			</div>
 			{/* Main content with pet's info and actions */}
