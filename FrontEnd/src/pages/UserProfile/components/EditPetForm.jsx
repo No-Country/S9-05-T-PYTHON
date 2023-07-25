@@ -1,17 +1,17 @@
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import * as yup from 'yup';
-import { useCreatePetMutation } from '../../../store/api/apiSlice';
-import { useEffect } from 'react';
+import { useUpdatePetMutation } from '../../../store/api/apiSlice';
 
 const schema = yup
 	.object({
 		full_name: yup.string().required('Por favor complete el campo requerido'),
 		description: yup
 			.string()
-			.max(300)
+			.max(150)
 			.required('Por favor complete el campo requerido'),
 		breed: yup.string().required('Por favor complete el campo requerido'),
 		gender: yup.string().required('Por favor seleccione un género'),
@@ -33,8 +33,8 @@ const schema = yup
 	})
 	.required();
 
-const CreatePetForm = () => {
-	const [createPet, { isSuccess, isError }] = useCreatePetMutation();
+const EditPetForm = ({ id }) => {
+	const [updatePet, { isSuccess, isError }] = useUpdatePetMutation();
 
 	const MySwal = withReactContent(Swal);
 
@@ -60,7 +60,8 @@ const CreatePetForm = () => {
 		formData.append('owner', 1);
 		formData.append('nationality', data.nationality);
 		formData.append('img', data.img[0]);
-		createPet(formData);
+
+		updatePet(id, formData);
 
 		reset();
 	};
@@ -172,4 +173,4 @@ const CreatePetForm = () => {
 		</form>
 	);
 };
-export default CreatePetForm;
+export default EditPetForm;

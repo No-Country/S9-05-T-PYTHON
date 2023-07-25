@@ -11,7 +11,7 @@ const Register = () => {
 					<RegisterForm />
 					<p>
 						Ya tienes una cuenta?{' '}
-						<Link to='auth/login' className='text-primary font-semibold'>
+						<Link to='/auth/login' className='text-primary font-semibold'>
 							Login
 						</Link>
 					</p>
