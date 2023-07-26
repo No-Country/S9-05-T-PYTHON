@@ -5,13 +5,13 @@ export const apiSlice = createApi({
 	baseQuery: fetchBaseQuery({
 		baseUrl: 'http://127.0.0.1:8000/',
 		// Comprueba si existe un token y lo envia en el header
-		prepareHeaders: (headers, { getState }) => {
-			const token = getState().auth.token;
+		/* prepareHeaders: (headers, { getState }) => {
+			const token = getState().authToken.token;
 			if (token) {
 				headers.set('authorization', `Bearer ${token}`);
 			}
 			return headers;
-		},
+		}, */
 	}),
 	tagTypes: ['Pets'],
 	endpoints: (builder) => ({
@@ -30,6 +30,10 @@ export const apiSlice = createApi({
 				method: 'POST',
 				body: userData,
 			}),
+		}),
+		// Trae el perfil del usuario
+		getUserProfile: builder.query({
+			query: () => 'person/v1/profile',
 		}),
 		// Trae todas las mascotas
 		getPets: builder.query({
@@ -80,6 +84,7 @@ export const {
 	useGetUpdatePetByIdQuery,
 	useGetPetByIdQuery,
 	useGetPetsQuery,
+	useGetUserProfileQuery,
 	useLoginUserMutation,
 	useRegisterUserMutation,
 } = apiSlice;

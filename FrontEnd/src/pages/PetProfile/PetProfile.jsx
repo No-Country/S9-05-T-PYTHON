@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
-import profileAvatar from '../../assets/img/profile.jpg';
 import { useGetPetByIdQuery } from '../../store/api/apiSlice';
+import { USER } from '../../utils/user';
 
 const PetProfile = () => {
 	const params = useParams();
@@ -20,23 +20,20 @@ const PetProfile = () => {
 			{/* Aside with pet's owner profile */}
 			<div className='flex flex-col gap-3 flex-shrink-0 w-60 bg-white rounded overflow-hidden shadow-md p-5'>
 				<img
-					src={profileAvatar}
+					src={USER.img}
 					alt='avatar'
 					className='object-cover w-40 h-40 rounded-full self-center'
 				/>
 				<div className='flex flex-col gap-2'>
 					<h6 className='text-xl font-semibold text-primary-dark text-center'>
-						Nombre del Dueño
+						{USER.name}
 					</h6>
-					<p className='text-lg'>Location</p>
+					<p className='text-lg text-center'>{USER.address}</p>
 					<div className='text-tertiary text-sm'>
-						<p>User Info</p>
-						<p>User Info</p>
-						<p>User Info</p>
+						<p>{USER.country}</p>
+						<p>{USER.city}</p>
+						<p>{USER.email}</p>
 					</div>
-					<button className='bg-secondary px-5 py-2 rounded font-semibold hover:bg-secondary-light transition-all shadow-md mt-2 self-center w-full'>
-						Contactar
-					</button>
 				</div>
 			</div>
 			{/* Main content with pet's info and actions */}

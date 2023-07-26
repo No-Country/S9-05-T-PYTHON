@@ -5,6 +5,7 @@ import withReactContent from 'sweetalert2-react-content';
 import * as yup from 'yup';
 import { useRegisterUserMutation } from '../../../store/api/apiSlice';
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const schema = yup
 	.object({
@@ -29,6 +30,7 @@ const RegisterForm = () => {
 	const [registerUser, { isSuccess, isError }] = useRegisterUserMutation();
 
 	const MySwal = withReactContent(Swal);
+	const navigate = useNavigate();
 
 	const {
 		register,
@@ -53,6 +55,7 @@ const RegisterForm = () => {
 				title: 'Registro exitoso!!',
 				icon: 'success',
 				scrollbarPadding: false,
+				didClose: () => navigate('/auth/login'),
 			});
 		} else if (isError) {
 			MySwal.fire({

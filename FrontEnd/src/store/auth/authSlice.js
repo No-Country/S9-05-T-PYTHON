@@ -15,7 +15,7 @@ export const authTokenSlice = createSlice({
 		: emptyUser,
 	reducers: {
 		setCredentials: (state, { payload }) => {
-			const accessToken = payload.token;
+			const accessToken = payload.access;
 			localStorage.setItem('user', JSON.stringify(accessToken));
 			state.token = accessToken;
 		},
@@ -28,7 +28,7 @@ export const authTokenSlice = createSlice({
 });
 
 // ------------------ //
-export const authSlice = createSlice({
+/* export const authSlice = createSlice({
 	name: 'auth',
 	initialState: {
 		status: 'checking',
@@ -57,9 +57,9 @@ export const authSlice = createSlice({
 	},
 });
 export const { onCheking, onLogin, onLogout, clearErrorMessage } =
-	authSlice.actions;
+	authSlice.actions; */
 
 // Exports Auth with Token
 export const { setCredentials, logOut } = authTokenSlice.actions;
 
-export const selectCurrentToken = (state) => state.auth.token;
+export const selectCurrentToken = (state) => state.authToken.token;
