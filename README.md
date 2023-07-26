@@ -54,3 +54,15 @@ Pet Connect fue desarrollada utilizando tecnologías de vanguardia para ofrecer 
 ![VS CODE](https://img.shields.io/badge/-VS%20CODE-blueviolet?style=for-the-badge&logo=Visual%20studio&logoColor=white)
 
 
+#### 🧑💻 TL:
+
+
+| <img src="https://www.nicepng.com/png/full/128-1280406_user-icon-png.png" width=50>|
+|:-:|
+| **Billy Campagnoli**|
+<a href="https://github.com/Bfix40"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/billy-campagnoli-221621223/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
+
+
+
+
+
