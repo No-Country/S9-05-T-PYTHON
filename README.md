@@ -12,10 +12,10 @@ Pet Connect fue desarrollada utilizando tecnologías de vanguardia para ofrecer 
 
 ### ⚛️ Front End:
 
-| <img src="https://www.nicepng.com/png/full/128-1280406_user-icon-png.png" width=50>| <img src="https://www.nicepng.com/png/full/128-1280406_user-icon-png.png" width=50>| <img src="https://www.nicepng.com/png/full/128-1280406_user-icon-png.png" width=50>| 
-|:-:|:-:|:-:|
-| **Agustin Galvan**| **Francisco Andrés**| **Roman Arenas**|
-| <a href="https://www.linkedin.com/in/agustin-galvan-30592715a/)"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="https://www.linkedin.com/in/franandres/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a>  | <a href="https://www.linkedin.com/in/roman-emiliano-arenas-55b8561aa "><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a>  |
+| <img src="https://www.nicepng.com/png/full/128-1280406_user-icon-png.png" width=50>| <img src="https://www.nicepng.com/png/full/128-1280406_user-icon-png.png" width=50>| <img src="https://www.nicepng.com/png/full/128-1280406_user-icon-png.png" width=50>| <img src="https://www.nicepng.com/png/full/128-1280406_user-icon-png.png" width=50> |<img src="https://www.nicepng.com/png/full/128-1280406_user-icon-png.png" width=50>|
+|:-:|:-:|:-:|:-:|:-:|
+| **Agustin Galvan**| **Francisco Andrés**| **Roman Arenas**|**Abel Acuña**| **Victor Férnandez**|
+| <a href="https://www.linkedin.com/in/agustin-galvan-30592715a/)"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="https://www.linkedin.com/in/franandres/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a>  | <a href="https://www.linkedin.com/in/roman-emiliano-arenas-55b8561aa "><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a>  | <a href="https://www.linkedin.com/in/abel-acu%C3%B1a-roninwebdesign/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="https://www.linkedin.com/in/victor-h-fernandez-p"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
 
 
  #### 🛠️ Tech Stack:
