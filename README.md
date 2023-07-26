@@ -25,7 +25,8 @@ Pet Connect fue desarrollada utilizando tecnologías de vanguardia para ofrecer 
 ### ☕ Back End:
 
   #### 🛠️ Tech Stack:
-![Django](https://img.shields.io/badge/Django-blue?style=for-the-badge&logo=django) ![Django rest framework](https://img.shields.io/badge/Django%20rest%20framework-gray?style=for-the-badge&logo=django&logoColor=white) 
+ ![Python](https://img.shields.io/badge/Python-green?style=for-the-badge&logo=python) 
+ ![Django](https://img.shields.io/badge/Django-blue?style=for-the-badge&logo=django) ![Django rest framework](https://img.shields.io/badge/Django%20rest%20framework-gray?style=for-the-badge&logo=django&logoColor=white) 
 
 
   #### 🧑💻 QA Testers:
