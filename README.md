@@ -29,7 +29,7 @@ Pet Connect fue desarrollada utilizando tecnologías de vanguardia para ofrecer 
 | <img src="https://www.nicepng.com/png/full/128-1280406_user-icon-png.png" width=50>|<img src="https://www.nicepng.com/png/full/128-1280406_user-icon-png.png" width=50> |
 |:-:|:-:|
 | **Agustin Ribotta**| **Pablo Mateo Silva**|
-| <a href="https://www.linkedin.com/in/agustin-ribotta/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |  <a href=" https://www.linkedin.com/in/pablo-mateo-silva-mendez-04a2a0246/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
+| <a href="https://www.linkedin.com/in/agustin-ribotta/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="https://www.linkedin.com/in/pablo-mateo-silva-mendez-04a2a0246/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
 
 
   #### 🛠️ Tech Stack:
