@@ -8,9 +8,9 @@ Bienvenido a Pet connect, un lugar unico, donde tu mascota podra no solo acceder
 
 Pet Connect fue desarrollada utilizando tecnologías de vanguardia para ofrecer una experiencia de usuario excepcional:
 
-### ⚛️ Front End:
-
 #### 🧑💻 Developers:
+
+### ⚛️ Front End:
 
 | <img src="https://www.nicepng.com/png/full/128-1280406_user-icon-png.png" width=50>| <img src="https://www.nicepng.com/png/full/128-1280406_user-icon-png.png" width=50>| <img src="https://www.nicepng.com/png/full/128-1280406_user-icon-png.png" width=50>| 
 |:-:|:-:|:-:|
@@ -20,7 +20,8 @@ Pet Connect fue desarrollada utilizando tecnologías de vanguardia para ofrecer 
 
  #### 🛠️ Tech Stack:
   
-![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=HTML5&logoColor=white) ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=Vercel&logoColor=white) ![Visual Studio Code](https://img.shields.io/badge/Visual_Studio_Code-22A7F2?style=for-the-badge&logo=Visual%20studio&logoColor=white)
+![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=HTML5&logoColor=white) ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=Vercel&logoColor=white) ![Visual Studio Code](https://img.shields.io/badge/Visual_Studio_Code-22A7F2?style=for-the-badge&logo=Visual%20studio&logoColor=white) ![React](https://img.shields.io/badge/React%20JS-blue?style=for-the-badge&logo=react)  
+
 
 ### ☕ Back End:
 
