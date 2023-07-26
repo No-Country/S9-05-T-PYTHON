@@ -72,4 +72,7 @@ class PetLikeSerializers(serializers.ModelSerializer):
         model = PetModel
         fields =(
             'likes',
+            'owner',
+            'full_name',
+            'img',
         )

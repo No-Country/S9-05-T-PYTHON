@@ -9,8 +9,10 @@ import MainLayout from '../layout/MainLayout';
 import { Home } from '../pages';
 import PetProfile from '../pages/PetProfile/PetProfile';
 import Register from '../pages/Register/Register';
-import UserProfile from '../pages/UserProfile/UserProfile';
 import Matchs from '../pages/matchs/Matchs';
+import MatchsList from '../pages/matchs/components/MatchsList';
+import UserProfile from '../pages/UserProfile/UserProfile';
+
 
 export const AppRouter = createBrowserRouter(
 	createRoutesFromElements(
@@ -22,6 +24,7 @@ export const AppRouter = createBrowserRouter(
 			<>
 				<Route index element={<Home />} />
 				<Route path='/matchs' element={<Matchs />} />
+				<Route path='/matchs/:id' element={<MatchsList />} />
 				<Route path='/pet-profile/:id' element={<PetProfile />} />
 				<Route path='/user-profile' element={<UserProfile />} />
 			</>

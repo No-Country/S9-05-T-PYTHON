@@ -2,8 +2,19 @@ import { useState } from 'react';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
+
 const CardMatch = ({ info }) => {
 	const [match, setMatch] = useState(false);
+	const [information,setInformation]=useState({nombre:"",perro:"",id:""})
+
+
+		const cargarInfo=(usuario,raza,idUsuario)=>{
+		(usuario&&raza&&idUsuario)!=""
+		?setInformation({nombre:usuario,perro:raza,id:idUsuario})
+		:setInformation({nombre:"",perro:"",id:""})
+		console.log(information)
+	}
+
 	return (
 		<div className='flex flex-col justify-around items-center text-center min-w-[250px] w-full max-w-[400px] min-h-[400px] px-4 my-[2em] mx-[1em] rounded-lg shadow-lg hover:shadow-primary hover:scale-[1.05] transition-all bg-white'>
 			<div className='w-[100%] flex flex-col md:flex-row justify-around items-center'>
@@ -21,9 +32,9 @@ const CardMatch = ({ info }) => {
 					}}
 					className=' text-tertiary rounded-3xl m-1'>
 					{!match ? (
-						<AiOutlineHeart className='text-[50px] rounded-3xl p-1' />
+						<AiOutlineHeart onClick={()=>{cargarInfo("Francisco","Pastor Aleman","3")}} className='text-[50px] rounded-3xl p-1' />
 					) : (
-						<AiFillHeart className='text-[50px] rounded-3xl p-1' />
+						<AiFillHeart  onClick={()=>{cargarInfo("","","")}} className='text-[50px] rounded-3xl p-1' />
 					)}
 				</button>
 				<Link
