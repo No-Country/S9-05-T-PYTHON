@@ -41,9 +41,9 @@ Pet Connect fue desarrollada utilizando tecnologías de vanguardia para ofrecer 
 
 #### 🛠️ Tech Stack:
 
-![POSTMAN](https://img.shields.io/badge/-POSTMAN-red?style=for-the-badge)
-![SELENIUM](https://img.shields.io/badge/-SELENIUM-blue?style=for-the-badge)
-![JASMINE](https://img.shields.io/badge/-JASMINE-PINK?style=for-the-badge)
-![VS CODE](https://img.shields.io/badge/-VS%20CODE-blueviolet?style=for-the-badge)
+![POSTMAN](https://img.shields.io/badge/-POSTMAN-red?style=for-the-badge&logo=postman&logoColor=white)
+![SELENIUM](https://img.shields.io/badge/-SELENIUM-blue?style=for-the-badge&logo=selenium&logoColor=white)
+![JASMINE](https://img.shields.io/badge/-JASMINE-PINK?style=for-the-badge&logo=jasmine&logoColor=white)
+![VS CODE](https://img.shields.io/badge/-VS%20CODE-blueviolet?style=for-the-badge&logo=Visual%20studio&logoColor=white)
 
 
