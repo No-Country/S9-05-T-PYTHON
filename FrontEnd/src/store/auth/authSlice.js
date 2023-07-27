@@ -3,15 +3,14 @@ import { createSlice } from '@reduxjs/toolkit';
 // Define el estado inicial del usuario
 const emptyUser = {
 	token: null,
-	id: null,
-	role: null,
+	pets: [],
 };
 
 // Utiliza el localStorage para revisar si existe un usuario y mantener la sesión
 export const authTokenSlice = createSlice({
 	name: 'authToken',
 	initialState: localStorage.getItem('user')
-		? { token: JSON.parse(localStorage.getItem('user')) }
+		? { token: JSON.parse(localStorage.getItem('user')), pets: [] }
 		: emptyUser,
 	reducers: {
 		setCredentials: (state, { payload }) => {
@@ -23,6 +22,12 @@ export const authTokenSlice = createSlice({
 			state = emptyUser;
 			localStorage.removeItem('user');
 			return state;
+		},
+		setNewPet: (state, { payload }) => {
+			state.pets = [...state.pets, payload];
+		},
+		eliminateNewPet: (state, { payload }) => {
+			state.pets = state.pets.filter((pet) => payload !== pet.full_name);
 		},
 	},
 });
@@ -60,6 +65,8 @@ export const { onCheking, onLogin, onLogout, clearErrorMessage } =
 	authSlice.actions; */
 
 // Exports Auth with Token
-export const { setCredentials, logOut } = authTokenSlice.actions;
+export const { setCredentials, logOut, setNewPet, eliminateNewPet } =
+	authTokenSlice.actions;
 
 export const selectCurrentToken = (state) => state.authToken.token;
+export const selectPets = (state) => state.authToken.pets;

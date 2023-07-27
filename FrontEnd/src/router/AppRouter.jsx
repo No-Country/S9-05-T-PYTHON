@@ -11,6 +11,7 @@ import PetProfile from '../pages/PetProfile/PetProfile';
 import Register from '../pages/Register/Register';
 import UserProfile from '../pages/UserProfile/UserProfile';
 import Matchs from '../pages/matchs/Matchs';
+import { ProtectedRoute } from '../auth/ProtectedRoute/ProtectedRoute';
 
 export const AppRouter = createBrowserRouter(
 	createRoutesFromElements(
@@ -23,7 +24,14 @@ export const AppRouter = createBrowserRouter(
 				<Route index element={<Home />} />
 				<Route path='/matchs' element={<Matchs />} />
 				<Route path='/pet-profile/:id' element={<PetProfile />} />
-				<Route path='/user-profile' element={<UserProfile />} />
+				<Route
+					path='/user-profile'
+					element={
+						<ProtectedRoute redirectTo='/auth/login'>
+							<UserProfile />
+						</ProtectedRoute>
+					}
+				/>
 			</>
 			<Route path='*' element={<Error404 />} />
 		</Route>

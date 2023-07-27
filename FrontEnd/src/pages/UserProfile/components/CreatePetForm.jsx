@@ -5,6 +5,8 @@ import withReactContent from 'sweetalert2-react-content';
 import * as yup from 'yup';
 import { useCreatePetMutation } from '../../../store/api/apiSlice';
 import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setNewPet } from '../../../store/auth/authSlice';
 
 const schema = yup
 	.object({
@@ -35,6 +37,7 @@ const schema = yup
 
 const CreatePetForm = () => {
 	const [createPet, { isSuccess, isError }] = useCreatePetMutation();
+	const dispatch = useDispatch();
 
 	const MySwal = withReactContent(Swal);
 
@@ -60,7 +63,9 @@ const CreatePetForm = () => {
 		formData.append('owner', 1);
 		formData.append('nationality', data.nationality);
 		formData.append('img', data.img[0]);
+
 		createPet(formData);
+		dispatch(setNewPet(data));
 
 		reset();
 	};

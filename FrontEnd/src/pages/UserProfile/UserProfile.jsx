@@ -1,17 +1,22 @@
-import { Provider } from 'react-redux';
+import { Provider, useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import banner from '../../assets/hero.webp';
-import { useGetPetsQuery } from '../../store/api/apiSlice';
+import { selectPets } from '../../store/auth/authSlice';
 import { store } from '../../store/store';
 import { USER } from '../../utils/user';
 import CreatePetForm from './components/CreatePetForm';
 import PetCard from './components/PetCard';
 import UserEditForm from './components/UserEditForm';
+import { useGetPetsQuery } from '../../store/api/apiSlice';
 
 const UserProfile = () => {
 	const { currentData } = useGetPetsQuery();
-	const newData = currentData?.slice(1, 3);
+	const storedData = useSelector(selectPets);
+	const newData = currentData?.filter((pet) =>
+		storedData.find((e) => e.full_name === pet.full_name)
+	);
+	console.log(newData);
 
 	const MySwal = withReactContent(Swal);
 

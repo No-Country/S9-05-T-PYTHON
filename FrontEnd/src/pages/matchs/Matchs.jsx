@@ -3,7 +3,6 @@ import CardMatch from './components/CardMatch';
 
 const Matchs = () => {
 	const { currentData } = useGetPetsQuery();
-	console.log(currentData);
 
 	return (
 		<div className='w-[100%] min-h-[100vh] flex flex-col justify-center items-center'>
